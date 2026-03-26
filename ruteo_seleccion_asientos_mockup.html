@@ -605,10 +605,10 @@
             <div class="meta-row">
               <div class="meta-item"><span>Ruta</span><strong>Medellin -> Santa Marta</strong></div>
               <div class="meta-item"><span>Hora de salida</span><strong>6:00 AM</strong></div>
-              <div class="meta-item"><span>Asiento seleccionado</span><strong id="selectedMeta">Ninguno</strong></div>
+              <div class="meta-item"><span>Asientos seleccionados</span><strong id="selectedMeta">Ninguno</strong></div>
               <div class="meta-item"><span>Estado</span><strong id="statusMeta">Pendiente de reserva</strong></div>
             </div>
-            <p class="hint" id="seatHint">Selecciona un asiento para continuar</p>
+            <p class="hint" id="seatHint">Selecciona uno o varios asientos para continuar</p>
           </div>
         </div>
       </div>
@@ -644,12 +644,12 @@
       <div class="bottom">
         <div class="bottom-info">
           <div>
-            <p class="label">Asiento seleccionado</p>
-            <p class="seat-value" id="bottomSeatText">Selecciona un asiento</p>
+            <p class="label">Asientos seleccionados</p>
+            <p class="seat-value" id="bottomSeatText">Selecciona uno o varios asientos</p>
           </div>
           <div style="text-align: right;">
             <p class="label">Total</p>
-            <p class="price">$185.000</p>
+            <p class="price" id="totalPrice">$0</p>
           </div>
         </div>
         <button class="reserve-btn" id="reserveBtn" type="button" disabled>Reservar ahora</button>
@@ -676,8 +676,10 @@
     const goPayNow = document.getElementById("goPayNow");
     const resetAfterSuccess = document.getElementById("resetAfterSuccess");
 
-    let selectedSeatEl = null;
-    let selectedSeatData = null;
+    const totalPrice = document.getElementById("totalPrice");
+
+    const BASE_PRICE = 185000;
+    const selectedSeats = new Map();
     let reserveTimer = null;
 
     function buildSeatCode(row, col) {
@@ -689,36 +691,73 @@
       seatHint.classList.toggle("error", type === "error");
     }
 
-    function setSelectedSeat(seatEl) {
-      if (selectedSeatEl) selectedSeatEl.classList.remove("selected");
-      selectedSeatEl = seatEl;
-      selectedSeatEl.classList.add("selected");
+    function formatCOP(value) {
+      return "$" + value.toLocaleString("es-CO");
+    }
 
-      selectedSeatData = {
-        number: Number(seatEl.dataset.number),
-        row: Number(seatEl.dataset.row),
-        column: Number(seatEl.dataset.column),
-        code: seatEl.dataset.code
-      };
+    function getSelectedSeatList() {
+      return [...selectedSeats.values()].sort((a, b) => a.number - b.number);
+    }
 
-      selectedMeta.textContent = selectedSeatData.code + " (Asiento " + selectedSeatData.number + ")";
+    function updateSelectionUI() {
+      const list = getSelectedSeatList();
+      const count = list.length;
+
+      if (count === 0) {
+        selectedMeta.textContent = "Ninguno";
+        statusMeta.textContent = "Pendiente de reserva";
+        bottomSeatText.textContent = "Selecciona uno o varios asientos";
+        reserveBtn.disabled = true;
+        reserveBtn.classList.remove("loading");
+        reserveBtn.textContent = "Reservar ahora";
+        totalPrice.textContent = "$0";
+        showHint("Selecciona uno o varios asientos para continuar", "ok");
+        return;
+      }
+
+      const codes = list.map((seat) => seat.code);
+      const total = BASE_PRICE * count;
+
+      selectedMeta.textContent = codes.join(", ");
       statusMeta.textContent = "Listo para reservar";
-      bottomSeatText.innerHTML = "Asiento <em>" + selectedSeatData.code + "</em>";
+      bottomSeatText.innerHTML = count === 1
+        ? "Asiento <em>" + codes[0] + "</em>"
+        : "Asientos <em>" + codes.join(", ") + "</em>";
+
+      totalPrice.textContent = formatCOP(total);
       reserveBtn.disabled = false;
-      showHint("Asiento seleccionado: " + selectedSeatData.code, "ok");
+      showHint(
+        (count === 1 ? "1 asiento seleccionado" : String(count) + " asientos seleccionados") + ": " + codes.join(", "),
+        "ok"
+      );
+    }
+
+    function toggleSeatSelection(seatEl) {
+      const code = seatEl.dataset.code;
+
+      if (selectedSeats.has(code)) {
+        selectedSeats.delete(code);
+        seatEl.classList.remove("selected");
+      } else {
+        const seatData = {
+          number: Number(seatEl.dataset.number),
+          row: Number(seatEl.dataset.row),
+          column: Number(seatEl.dataset.column),
+          code: code
+        };
+        selectedSeats.set(code, seatData);
+        seatEl.classList.add("selected");
+      }
+
+      updateSelectionUI();
     }
 
     function clearSelection() {
-      if (selectedSeatEl) selectedSeatEl.classList.remove("selected");
-      selectedSeatEl = null;
-      selectedSeatData = null;
-      selectedMeta.textContent = "Ninguno";
-      statusMeta.textContent = "Pendiente de reserva";
-      bottomSeatText.textContent = "Selecciona un asiento";
-      reserveBtn.disabled = true;
-      reserveBtn.classList.remove("loading");
-      reserveBtn.textContent = "Reservar ahora";
-      showHint("Selecciona un asiento para continuar", "ok");
+      selectedSeats.clear();
+      document.querySelectorAll(".seat.selected").forEach((seat) => {
+        seat.classList.remove("selected");
+      });
+      updateSelectionUI();
     }
 
     function buildSeats() {
@@ -757,7 +796,7 @@
             }
             if (processingLayer.classList.contains("show")) return;
             if (successLayer.classList.contains("show")) return;
-            setSelectedSeat(seat);
+            toggleSeatSelection(seat);
           });
 
           rowEl.appendChild(seat);
@@ -774,8 +813,12 @@
     }
 
     function showProcessing() {
-      if (!selectedSeatData) return;
-      processingSeat.textContent = "Asiento elegido: " + selectedSeatData.code;
+      const list = getSelectedSeatList();
+      if (list.length === 0) return;
+
+      const codes = list.map((seat) => seat.code);
+      processingSeat.textContent =
+        (codes.length === 1 ? "Asiento elegido: " : "Asientos elegidos: ") + codes.join(", ");
       processingLayer.classList.add("show");
       reserveBtn.classList.add("loading");
       reserveBtn.disabled = true;
@@ -784,9 +827,12 @@
     }
 
     function showSuccess() {
+      const list = getSelectedSeatList();
+      const codes = list.map((seat) => seat.code);
       processingLayer.classList.remove("show");
       successLayer.classList.add("show");
-      successSeat.textContent = "Asiento reservado: " + selectedSeatData.code;
+      successSeat.textContent =
+        (codes.length === 1 ? "Asiento reservado: " : "Asientos reservados: ") + codes.join(", ");
       statusMeta.textContent = "Reserva temporal generada";
       reserveBtn.classList.remove("loading");
       reserveBtn.textContent = "Reserva confirmada";
@@ -794,7 +840,7 @@
     }
 
     function reserveSeat() {
-      if (!selectedSeatData) return;
+      if (selectedSeats.size === 0) return;
       clearTimeout(reserveTimer);
       showProcessing();
       reserveTimer = setTimeout(showSuccess, 2300);
@@ -804,11 +850,13 @@
       clearTimeout(reserveTimer);
       processingLayer.classList.remove("show");
       successLayer.classList.remove("show");
-      clearSelection();
+      reserveBtn.classList.remove("loading");
+      reserveBtn.textContent = "Reservar ahora";
+      updateSelectionUI();
     }
 
     function goToPayment() {
-      if (!selectedSeatData) return;
+      if (selectedSeats.size === 0) return;
       statusMeta.textContent = "Paso de pago en curso";
       showHint("Continua con el pago: tienes 10 minutos para completar la reserva", "ok");
     }
