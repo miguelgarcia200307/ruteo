@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruteo | Presentacion Web del Proyecto</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="progress-wrap" aria-hidden="true">
+    <div class="progress-bar" id="scrollProgress"></div>
+  </div>
+
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#inicio" aria-label="Ir al inicio">
+      <img src="LOGO.png" alt="Logo de Ruteo" class="brand-logo">
+      <span>Ruteo</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#inicio">Inicio</a>
+      <a href="#indice">Indice</a>
+      <a href="#problema">Problema</a>
+      <a href="#funcional">Funcionamiento</a>
+      <a href="#mockups">Mockups</a>
+      <a href="#monetizacion">Monetizacion</a>
+      <a href="#cierre">Cierre</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="inicio">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-content reveal">
+        <img src="LOGO.png" alt="Logo oficial Ruteo" class="hero-logo">
+        <p class="kicker">Presentacion del proyecto movil</p>
+        <h1>Ruteo</h1>
+        <p class="subtitle">Plataforma movil para la gestion y comercializacion de viajes turisticos terrestres.</p>
+        <div class="hero-meta">
+          <div>
+            <h3>Integrantes</h3>
+            <p>Miguel Angel Garcia Daza</p>
+            <p>Jhon Jairo Gomez Duran</p>
+            <p>Yorfran Yesid Sanjuan Garcia</p>
+          </div>
+          <div>
+            <h3>Docente</h3>
+            <p>Ronald Alexander Vacca Ascanio</p>
+            <h3>Institucion</h3>
+            <p>Universidad Popular del Cesar</p>
+            <p>Facultad de Ingenierias y Tecnologicas</p>
+            <p>Programacion Movil</p>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#indice">Comenzar presentacion</a>
+          <a class="btn btn-ghost" href="#mockups">Ver mockups</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="indice">
+      <div class="section-head">
+        <p class="kicker">Mapa de exposicion</p>
+        <h2>Ruta de la presentacion</h2>
+      </div>
+      <div class="index-grid">
+        <a href="#problema">Problema</a>
+        <a href="#justificacion">Justificacion</a>
+        <a href="#poblacion">Poblacion objetivo</a>
+        <a href="#objetivos">Objetivos</a>
+        <a href="#funcional">Funcionamiento de la app</a>
+        <a href="#mockups">Mockups</a>
+        <a href="#valor">Propuesta de valor</a>
+        <a href="#viabilidad">Viabilidad tecnica</a>
+        <a href="#tecnologias">Tecnologias</a>
+        <a href="#flujo">Flujo del sistema</a>
+        <a href="#monetizacion">Monetizacion</a>
+        <a href="#aprobacion">Razones para aprobar</a>
+        <a href="#cronograma">Cronograma</a>
+        <a href="#conclusiones">Conclusiones</a>
+      </div>
+    </section>
+
+    <section class="section split reveal" id="problema">
+      <div>
+        <p class="kicker">Contexto</p>
+        <h2>Problema identificado</h2>
+        <p>En el turismo terrestre aun predominan procesos manuales y canales dispersos como WhatsApp, redes sociales y registros informales. Esto dificulta la gestion de reservas, la actualizacion de rutas y precios, y genera una experiencia menos clara y confiable para el viajero.</p>
+      </div>
+      <div class="pain-grid">
+        <article>Informacion dispersa</article>
+        <article>Reservas poco organizadas</article>
+        <article>Errores en cupos y precios</article>
+        <article>Menor confianza del usuario</article>
+        <article>Carga operativa para los operadores</article>
+        <article>Ineficiencia operativa</article>
+      </div>
+    </section>
+
+    <section class="section reveal" id="justificacion">
+      <div class="section-head center">
+        <p class="kicker">Pertinencia</p>
+        <h2>Por que este proyecto es necesario</h2>
+        <p>Ruteo responde a la falta de herramientas digitales especializadas para organizar, promocionar y comercializar viajes turisticos terrestres. Su proposito es centralizar funciones clave como publicacion de planes, reservas, rutas y comunicacion, mejorando la operacion y la experiencia del usuario.</p>
+      </div>
+      <div class="cards-3">
+        <article>
+          <h3>Empresarial</h3>
+          <p>Ayuda a los operadores a modernizar procesos, reducir errores y ampliar su alcance comercial.</p>
+        </article>
+        <article>
+          <h3>Social</h3>
+          <p>Aporta a la transformacion digital de un sector que aun presenta baja estructuracion tecnologica.</p>
+        </article>
+        <article>
+          <h3>Academico</h3>
+          <p>Permite aplicar programacion movil, diseno de interfaces, bases de datos y analisis de requerimientos en una necesidad real.</p>
+        </article>
+      </div>
+      <p class="highlight-quote">Ruteo no solo digitaliza una oferta: organiza la operacion y fortalece la confianza del servicio turistico terrestre.</p>
+    </section>
+
+    <section class="section split reveal" id="poblacion">
+      <div class="audience-card">
+        <h3>Viajeros</h3>
+        <p>Usuarios interesados en planes turisticos terrestres que necesitan consultar destinos, rutas, fechas, precios y disponibilidad de forma clara, rapida y confiable.</p>
+      </div>
+      <div class="audience-card">
+        <h3>Operadores turisticos</h3>
+        <p>Pequenas y medianas empresas que organizan viajes, comercializan pasadias y tours, y requieren publicar planes, administrar reservas, gestionar cupos, actualizar precios y mejorar la comunicacion con sus clientes.</p>
+      </div>
+      <p class="full-line">Ruteo conecta de forma directa la oferta y la demanda del turismo terrestre en un solo entorno digital.</p>
+    </section>
+
+    <section class="section reveal" id="objetivos">
+      <div class="section-head">
+        <p class="kicker">Direccion del proyecto</p>
+        <h2>Objetivos</h2>
+      </div>
+      <article class="goal-main">
+        <h3>Objetivo general</h3>
+        <p>Desarrollar una aplicacion movil para la gestion y comercializacion de viajes turisticos terrestres que permita a los viajeros consultar y reservar planes, y a los operadores publicar ofertas y administrar reservas, con el fin de mejorar la organizacion del servicio y la experiencia del usuario.</p>
+      </article>
+      <div class="goal-grid">
+        <article>Disenar una interfaz movil intuitiva para consultar, filtrar y visualizar planes turisticos.</article>
+        <article>Implementar un modulo de reservas para registrar solicitudes, separar cupos y consultar estados.</article>
+        <article>Desarrollar un modulo de gestion para operadores turisticos.</article>
+        <article>Integrar notificaciones y seguimiento sobre cambios, confirmaciones y novedades del viaje.</article>
+      </div>
+    </section>
+
+    <section class="section reveal" id="funcional">
+      <div class="section-head">
+        <p class="kicker">Nucleo funcional</p>
+        <h2>Descripcion funcional de la app</h2>
+      </div>
+      <div class="tabs" id="functionalTabs">
+        <div class="tab-list" role="tablist" aria-label="Modulos funcionales">
+          <button class="tab-btn active" data-tab="viajeros">Modulo viajeros</button>
+          <button class="tab-btn" data-tab="operadores">Modulo operadores</button>
+          <button class="tab-btn" data-tab="reservas">Reserva y cupos</button>
+          <button class="tab-btn" data-tab="pagos">Sistema de pagos</button>
+          <button class="tab-btn" data-tab="tickets">Ticket y validacion</button>
+          <button class="tab-btn" data-tab="valorplus">Funciones de valor</button>
+        </div>
+
+        <article class="tab-panel active" id="tab-viajeros">
+          <ul>
+            <li>Consulta de catalogo sin registrarse.</li>
+            <li>Visualizacion de destinos, fechas, precios, rutas, cupos e imagenes.</li>
+            <li>Detalle del plan con informacion completa para decidir.</li>
+            <li>Login o registro al reservar para asociar historial.</li>
+            <li>Seleccion visual de asiento.</li>
+            <li>Reserva y pago o separacion del cupo.</li>
+            <li>Consulta de ticket digital en cuenta del usuario.</li>
+          </ul>
+        </article>
+
+        <article class="tab-panel" id="tab-operadores">
+          <ul>
+            <li>Publicacion de planes turisticos.</li>
+            <li>Administracion de disponibilidad y cupos.</li>
+            <li>Revision de reservas y estado de pagos o separaciones.</li>
+            <li>Validacion de tickets con QR.</li>
+            <li>Registro de asistencia de viajeros.</li>
+          </ul>
+        </article>
+
+        <article class="tab-panel" id="tab-reservas">
+          <ul>
+            <li>Flujo ordenado: plan, detalle, inicio de sesion, asiento, reserva.</li>
+            <li>Validacion de disponibilidad antes de confirmar.</li>
+            <li>Trazabilidad de la reserva para operador y viajero.</li>
+          </ul>
+          <div class="seat-sim-cta-wrap">
+            <p class="seat-sim-kicker">Experiencia interactiva</p>
+            <h4>Visualiza como funciona la reserva de asientos en tiempo real</h4>
+            <p>Explora la distribucion del bus, selecciona un asiento disponible y simula la confirmacion para avanzar al paso de pago.</p>
+            <button class="btn btn-primary" id="openSeatSimulation" type="button">Simular seleccion de asientos</button>
+          </div>
+        </article>
+
+        <article class="tab-panel" id="tab-pagos">
+          <ul>
+            <li>Pasarela digital como Wompi o Mercado Pago.</li>
+            <li>Esquemas de pre-reserva, abono o pago parcial.</li>
+            <li>Pagos externos coordinados cuando aplique.</li>
+            <li>Registro y control del estado de pago para mantener trazabilidad.</li>
+          </ul>
+        </article>
+
+        <article class="tab-panel" id="tab-tickets">
+          <ul>
+            <li>Ticket digital asociado al usuario.</li>
+            <li>QR unico por ticket.</li>
+            <li>Escaneo por operador para validar autenticidad.</li>
+            <li>Control de acceso y registro de ingreso.</li>
+          </ul>
+        </article>
+
+        <article class="tab-panel" id="tab-valorplus">
+          <ul>
+            <li>Seguimiento del viaje en tiempo real como evolucion.</li>
+            <li>Analisis inteligente de rutas: trafico, tiempos, peajes, combustible y restricciones.</li>
+            <li>Cotizacion de alquiler de buses o servicios privados.</li>
+            <li>Funciones de IA para recomendaciones, mejora de publicaciones y segmentacion.</li>
+            <li>Herramientas futuras de comunicacion, reputacion y fidelizacion.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal" id="flujo">
+      <div class="section-head">
+        <p class="kicker">Operacion del sistema</p>
+        <h2>Flujo general de uso</h2>
+      </div>
+      <div class="flow-line">
+        <span>Consultar planes</span>
+        <span>Ver detalle</span>
+        <span>Iniciar sesion o registrarse</span>
+        <span>Seleccionar asiento</span>
+        <span>Reservar</span>
+        <span>Realizar pago</span>
+        <span>Generar ticket digital</span>
+        <span>Validar ticket QR</span>
+        <span>Registrar asistencia y actualizar cupos</span>
+      </div>
+      <h3 class="subheading">Requisitos funcionales clave</h3>
+      <div class="req-grid">
+        <article>Consulta de planes turisticos</article>
+        <article>Detalle del plan</article>
+        <article>Inicio de sesion para reservar</article>
+        <article>Seleccion visual de asientos</article>
+        <article>Validacion de disponibilidad</article>
+        <article>Registro de reserva</article>
+        <article>Procesamiento del pago</article>
+        <article>Generacion de ticket digital</article>
+        <article>Generacion de QR unico</article>
+        <article>Consulta de tickets</article>
+        <article>Escaneo de QR por operador</article>
+        <article>Validacion de ingreso y asistencia</article>
+        <article>Administracion de reservas</article>
+        <article>Actualizacion de cupos en tiempo real</article>
+      </div>
+    </section>
+
+    <section class="section reveal" id="mockups">
+      <div class="section-head">
+        <p class="kicker">Demostracion visual</p>
+        <h2>Galeria de mockups</h2>
+        <p>Los mockups permiten visualizar la experiencia de usuario de Ruteo, manteniendo coherencia de navegacion, identidad visual y componentes propios de una app movil.</p>
+      </div>
+      <div class="mockup-filters" id="mockupFilters"></div>
+      <div class="mockup-grid" id="mockupGrid"></div>
+    </section>
+
+    <section class="section reveal" id="valor">
+      <div class="section-head">
+        <p class="kicker">Diferenciacion</p>
+        <h2>Por que Ruteo es diferente</h2>
+        <p>Ruteo no se limita a mostrar destinos. Se proyecta como una plataforma operativa y comercial especializada en turismo terrestre, capaz de centralizar la publicacion de planes, la gestion de reservas, la seleccion de asientos, la validacion de tickets y la comunicacion con los viajeros.</p>
+      </div>
+      <div class="value-grid">
+        <article>Especializacion en turismo terrestre</article>
+        <article>Reserva organizada y centralizada</article>
+        <article>Seleccion visual de asientos</article>
+        <article>Ticket digital con QR</article>
+        <article>Mejor control operativo</article>
+        <article>Integracion con mapas y seguimiento</article>
+        <article>Utilidad para planes turisticos y alquiler de buses</article>
+      </div>
+    </section>
+
+    <section class="section split reveal" id="viabilidad">
+      <div>
+        <p class="kicker">Factibilidad</p>
+        <h2>Viabilidad tecnica del proyecto</h2>
+        <ul class="check-list">
+          <li>Desarrollo multiplataforma con Flutter y Dart.</li>
+          <li>Gestion de usuarios con autenticacion segura.</li>
+          <li>Administracion de planes turisticos.</li>
+          <li>Sistema de reservas y control de cupos.</li>
+          <li>Seleccion visual de asientos.</li>
+          <li>Integracion de pagos y pre-reservas.</li>
+          <li>Generacion de ticket digital.</li>
+          <li>Validacion mediante codigo QR.</li>
+        </ul>
+      </div>
+      <div class="viability-box">
+        <h3>Base tecnologica y viabilidad del sistema</h3>
+        <p>Ruteo es tecnicamente viable porque se basa en tecnologias modernas y accesibles. Flutter y Dart permiten desarrollar una app multiplataforma desde una sola base de codigo, facilitando la implementacion de funcionalidades como consulta de planes, reservas, seleccion de asientos y ticket digital.</p>
+        <p>Supabase Auth gestiona la autenticacion de usuarios, mientras que Supabase permite manejar la base de datos del sistema (usuarios, planes, reservas y asientos). El control de cupos y la disponibilidad se pueden implementar mediante validaciones dentro del flujo de reserva.</p>
+        <p>Ademas, Google Maps aporta soporte geografico para rutas y ubicaciones, y Wompi permite gestionar pagos dentro del contexto colombiano. La generacion de tickets digitales con QR complementa el control y validacion del servicio.</p>
+        <p>En conjunto, el proyecto presenta una viabilidad tecnica solida y un alcance realista para su desarrollo en el entorno academico.</p>
+      </div>
+    </section>
+
+    <section class="section reveal" id="tecnologias">
+      <div class="section-head">
+        <p class="kicker">Stack del proyecto</p>
+        <h2>Tecnologias y herramientas</h2>
+      </div>
+      <div class="tech-grid">
+        <article>
+          <div class="tech-logo-group">
+            <img class="tech-logo" src="https://cdn.simpleicons.org/flutter/02569B" alt="Logo de Flutter" loading="lazy" decoding="async">
+            <img class="tech-logo" src="https://cdn.simpleicons.org/dart/0175C2" alt="Logo de Dart" loading="lazy" decoding="async">
+          </div>
+          <h3>Flutter + Dart</h3>
+          <p>Desarrollo movil multiplataforma desde una sola base de codigo para interfaces dinamicas y funcionales.</p>
+        </article>
+        <article>
+          <img class="tech-logo tech-logo-local" src="vscode-logo.webp" alt="Logo de Visual Studio Code" loading="lazy" decoding="async">
+          <h3>Visual Studio Code</h3>
+          <p>Entorno principal de desarrollo durante la implementacion de la aplicacion.</p>
+        </article>
+        <article>
+          <img class="tech-logo" src="https://cdn.simpleicons.org/androidstudio/3DDC84" alt="Logo de Android Studio" loading="lazy" decoding="async">
+          <h3>Android Studio</h3>
+          <p>Soporte para emuladores y herramientas del SDK de Android.</p>
+        </article>
+        <article>
+          <img class="tech-logo" src="https://cdn.simpleicons.org/supabase/3ECF8E" alt="Logo de Supabase" loading="lazy" decoding="async">
+          <h3>Supabase</h3>
+          <p>Base de datos, almacenamiento y servicios backend para usuarios, reservas, asientos y tickets.</p>
+        </article>
+        <article>
+          <img class="tech-logo" src="https://cdn.simpleicons.org/supabase/3ECF8E" alt="Logo de Supabase Auth" loading="lazy" decoding="async">
+          <h3>Supabase Auth</h3>
+          <p>Registro e inicio de sesion para acceso seguro y asociacion de reservas por cuenta.</p>
+        </article>
+        <article>
+          <img class="tech-logo" src="https://cdn.simpleicons.org/googlemaps/4285F4" alt="Logo de Google Maps" loading="lazy" decoding="async">
+          <h3>Google Maps API</h3>
+          <p>Visualizacion de rutas, ubicaciones y soporte geografico dentro de la experiencia.</p>
+        </article>
+        <article>
+          <img class="tech-logo" src="https://cdn.simpleicons.org/firebase/FFCA28" alt="Logo de Firebase para notificaciones push" loading="lazy" decoding="async">
+          <h3>Notificaciones push</h3>
+          <p>Avisos de reservas, cambios de ruta, recordatorios y novedades importantes.</p>
+        </article>
+        <article>
+          <img class="tech-logo tech-logo-local" src="wompilogo.jpg" alt="Logo de Wompi" loading="lazy" decoding="async">
+          <h3>Wompi</h3>
+          <p>Pasarela de pago propuesta para el contexto colombiano.</p>
+        </article>
+        <article>
+          <img class="tech-logo" src="https://cdn.simpleicons.org/figma/F24E1E" alt="Logo de Figma" loading="lazy" decoding="async">
+          <h3>Figma</h3>
+          <p>Diseno de mockups, navegacion e identidad visual antes del desarrollo.</p>
+        </article>
+        <article>
+          <img class="tech-logo tech-logo-local" src="qrlogo.png" alt="Logo de codigo QR" loading="lazy" decoding="async">
+          <h3>Generacion y escaneo QR</h3>
+          <p>Validacion de tickets y control de acceso de viajeros de forma ordenada.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal" id="monetizacion">
+      <div class="section-head">
+        <p class="kicker">Sostenibilidad del proyecto</p>
+        <h2>Modelo de monetizacion</h2>
+      </div>
+
+      <div class="money-counters">
+        <article><span class="count" data-target="4">0</span><small>% adicional al cliente</small></article>
+        <article><span class="count" data-target="4">0</span><small>% descontado al operador</small></article>
+        <article><span class="count" data-target="8">0</span><small>% total por transaccion</small></article>
+      </div>
+
+      <div class="money-card">
+        <h3>a) Enfoque general</h3>
+        <p>Esquema transaccional sin suscripcion fija para empresas. La plataforma genera ingresos cuando ocurre una transaccion, reduciendo barreras de entrada y alineando ingresos con resultados.</p>
+      </div>
+      <div class="money-card">
+        <h3>b) Comision por transaccion</h3>
+        <p>Para un servicio de $100.000 COP: cliente paga $104.000, empresa recibe $96.000 y el margen bruto es $8.000. Sobre ese margen se descuenta la comision de pasarela y la utilidad neta aproximada queda cerca de $4.000.</p>
+      </div>
+      <div class="money-card">
+        <h3>c) Control de pagos fuera de plataforma</h3>
+        <p>Los tickets QR con validacion oficial se generan para pagos realizados en plataforma. Se mantiene respaldo de reserva, historial de transacciones y trazabilidad.</p>
+      </div>
+      <div class="money-card">
+        <h3>d) Pagos en efectivo y metodos alternativos</h3>
+        <p>Se maneja cupo o limite de deuda del operador. Puede vender hasta ese limite y luego debe saldar para continuar. Se contemplan suspension temporal, reduccion de cupo o restricciones por incumplimiento.</p>
+      </div>
+      <div class="money-card">
+        <h3>e) Seguridad del cupo mediante abonos</h3>
+        <p>Porcentaje configurable entre 10% y 30%. La comision se aplica sobre el valor efectivamente pagado y vuelve a aplicarse cuando se completa el saldo.</p>
+      </div>
+      <div class="money-card">
+        <h3>f) Ingresos por visibilidad</h3>
+        <ul>
+          <li>Destacado en busqueda: $10.000 a $20.000 COP.</li>
+          <li>Destacado en marketplace: $15.000 a $30.000 COP.</li>
+          <li>Combo de visibilidad: $25.000 a $50.000 COP.</li>
+        </ul>
+      </div>
+      <div class="money-card">
+        <h3>g) Verificacion de empresas</h3>
+        <p>Distintivo de confianza con pago periodico, por ejemplo $80.000 COP cada tres meses.</p>
+      </div>
+      <div class="money-card">
+        <h3>h) Servicios con inteligencia artificial</h3>
+        <p>Analisis de rutas con trafico, tiempos, peajes, combustible e incidentes o restricciones de via, bajo esquema premium.</p>
+      </div>
+      <div class="money-card">
+        <h3>i) Mejora de publicaciones</h3>
+        <p>Optimizacion de descripciones, titulos y presentacion del contenido. Valor estimado mensual: $10.000 a $20.000 COP.</p>
+      </div>
+      <div class="money-card ai-service-card">
+        <div class="ai-service-head">
+          <span class="ai-service-badge">IA aplicada a conversion</span>
+          <h3>i.1) Simulador premium: mejorar publicacion con IA</h3>
+        </div>
+        <p>Demuestra como una publicacion basica de un operador puede optimizarse en segundos para mejorar claridad, estructura comercial y potencial de conversion.</p>
+        <button class="btn btn-primary ai-open-trigger" id="openAiUpgradeModal" type="button">Simular mejora de publicacion</button>
+      </div>
+      <div class="money-card">
+        <h3>j) Notificaciones promocionadas</h3>
+        <p>Segmentacion geografica y campanas promocionales entre $5.000 y $20.000 COP por campana.</p>
+      </div>
+      <div class="money-card">
+        <h3>k) Estructura general del modelo</h3>
+        <p>Comision por transaccion, visibilidad y posicionamiento, verificacion, servicios digitales adicionales y funciones avanzadas.</p>
+      </div>
+      <div class="money-card">
+        <h3>l) Paquetes y descuentos por volumen</h3>
+        <p>Contratacion multiple con descuentos progresivos del 10% al 30% para incentivar adopcion de herramientas.</p>
+      </div>
+      <div class="money-card">
+        <h3>m) Cierre del modelo</h3>
+        <p>Modelo accesible, escalable y alineado con el sector, orientado a crecimiento organico y diversificacion de ingresos.</p>
+      </div>
+    </section>
+
+    <section class="section reveal final-tone" id="aprobacion">
+      <div class="section-head center">
+        <p class="kicker">Cierre argumentativo</p>
+        <h2>Razones para aprobar la propuesta</h2>
+      </div>
+      <div class="approve-grid">
+        <article>Responde a una problematica real y claramente identificada.</article>
+        <article>No es una idea abstracta: atiende necesidades existentes del sector.</article>
+        <article>Presenta propuesta de valor clara para viajeros y operadores.</article>
+        <article>Integra funciones aplicables: asientos, QR, reservas, mapas y seguimiento.</article>
+        <article>Mantiene alcance integral con planes turisticos y alquiler de buses.</article>
+        <article>Es tecnicamente viable con un MVP acotado y progresivo.</article>
+        <article>Tiene valor academico y formativo para Ingenieria de Sistemas.</article>
+        <article>Define con precision la poblacion objetivo y su necesidad.</article>
+      </div>
+      <p class="highlight-quote">Ruteo combina pertinencia, utilidad, diferenciacion, viabilidad tecnica y valor academico en una sola solucion.</p>
+    </section>
+
+    <section class="section reveal" id="cronograma">
+      <div class="section-head">
+        <p class="kicker">Plan de desarrollo</p>
+        <h2>Cronograma tentativo</h2>
+      </div>
+      <div class="timeline">
+        <article><h3>Analisis</h3><p>1 semana</p></article>
+        <article><h3>Diseno UI/UX</h3><p>1 semana</p></article>
+        <article><h3>Modelado y arquitectura</h3><p>1 semana</p></article>
+        <article><h3>Desarrollo frontend</h3><p>2 semanas</p></article>
+        <article><h3>Desarrollo backend</h3><p>2 semanas</p></article>
+        <article><h3>Integracion</h3><p>1 semana</p></article>
+        <article><h3>Pruebas</h3><p>1 semana</p></article>
+        <article><h3>Ajustes finales y preparacion de entrega</h3><p>1 semana</p></article>
+      </div>
+      <p class="total-time">Duracion total estimada: 10 semanas.</p>
+    </section>
+
+    <section class="section reveal" id="conclusiones">
+      <div class="section-head">
+        <p class="kicker">Conclusion</p>
+        <h2>Sintesis final</h2>
+      </div>
+      <p>Ruteo surge como respuesta a una necesidad real del turismo terrestre, donde aun persisten problemas de baja digitalizacion, desorganizacion en reservas y poca formalidad en la atencion. Su valor esta en centralizar procesos clave como consulta, reserva, seleccion de asientos, pagos y validacion mediante ticket digital. Ademas de ser una propuesta util y diferenciadora, presenta una factibilidad razonable dentro del contexto academico y permite aplicar conocimientos de desarrollo movil, interfaces, bases de datos e integracion de servicios.</p>
+    </section>
+
+    <section class="section close-section reveal" id="cierre">
+      <h2>Ruteo no solo propone una app.</h2>
+      <p>Propone una forma mas organizada, confiable y moderna de conectar viajeros y operadores turisticos terrestres.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#inicio">Volver al inicio</a>
+        <a class="btn btn-ghost" href="#mockups">Ver mockups</a>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="mockupModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <button class="modal-close" id="modalClose" aria-label="Cerrar">x</button>
+      <h3 id="modalTitle"></h3>
+      <iframe id="modalFrame" title="Vista ampliada del mockup"></iframe>
+      <div class="modal-controls">
+        <button id="modalPrev" class="btn btn-ghost">Anterior</button>
+        <button id="modalNext" class="btn btn-primary">Siguiente</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="ai-modal" id="aiUpgradeModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="aiModalTitle">
+    <div class="ai-modal-shell">
+      <button class="ai-modal-close" id="aiModalClose" aria-label="Cerrar simulacion">x</button>
+
+      <header class="ai-modal-header">
+        <p class="kicker">Optimizacion inteligente de publicaciones</p>
+        <h3 id="aiModalTitle">Mejora inteligente de publicaciones</h3>
+        <p class="ai-modal-subtitle">Simulacion de como Ruteo puede optimizar automaticamente una oferta turistica con IA</p>
+        <p class="ai-modal-copy">Esta experiencia muestra como una publicacion cargada por un operador puede transformarse en una version mas clara, atractiva y persuasiva para mejorar su conversion.</p>
+      </header>
+
+      <div class="ai-modal-layout">
+        <div class="ai-phone-wrap">
+          <div class="ai-phone" id="aiPhone">
+            <div class="ai-phone-notch" aria-hidden="true"></div>
+            <div class="ai-phone-screen">
+              <div class="ai-statusbar" aria-hidden="true">
+                <span>9:41</span>
+                <span>5G</span>
+                <span>100%</span>
+              </div>
+
+              <div class="ai-appbar">
+                <span class="ai-app-dot" aria-hidden="true"></span>
+                <p>Editar publicacion</p>
+                <span class="ai-app-chip">Panel operador</span>
+              </div>
+
+              <div class="ai-phone-content">
+                <div class="ai-version-row">
+                  <span class="ai-version-badge original" id="aiVersionBadge">Publicacion original</span>
+                  <span class="ai-result-badge" id="aiResultBadge" hidden>Publicacion optimizada con IA</span>
+                </div>
+
+                <div class="ai-tour-cover" aria-hidden="true">
+                  <span>Vista previa del tour</span>
+                </div>
+
+                <div class="ai-field">
+                  <span class="ai-field-label">Categoria</span>
+                  <p id="aiCategory">Tour terrestre</p>
+                </div>
+
+                <div class="ai-field">
+                  <span class="ai-field-label">Titulo</span>
+                  <h4 id="aiTitle">Viaje a Santa Marta</h4>
+                </div>
+
+                <div class="ai-meta-grid">
+                  <article>
+                    <span>Destino</span>
+                    <p id="aiDestination">Santa Marta</p>
+                  </article>
+                  <article>
+                    <span>Precio</span>
+                    <p id="aiPrice">Desde $185.000</p>
+                  </article>
+                  <article>
+                    <span>Fecha</span>
+                    <p id="aiDate">Salida este sabado</p>
+                  </article>
+                </div>
+
+                <div class="ai-field">
+                  <span class="ai-field-label">Descripcion</span>
+                  <p id="aiDescription">Vamos a Santa Marta en viaje turistico. Incluye transporte y acompanamiento. Salimos temprano y regresamos en la noche. Cupos disponibles.</p>
+                </div>
+
+                <div class="ai-field">
+                  <span class="ai-field-label">Itinerario</span>
+                  <ul id="aiItinerary" class="ai-list"></ul>
+                </div>
+
+                <div class="ai-field">
+                  <span class="ai-field-label">Incluye</span>
+                  <ul id="aiIncludes" class="ai-list"></ul>
+                </div>
+
+                <div class="ai-field">
+                  <span class="ai-field-label">Recomendaciones</span>
+                  <p id="aiTips">Llevar ropa comoda, hidratacion y documento.</p>
+                </div>
+              </div>
+
+              <div class="ai-process-layer" id="aiProcessLayer" aria-live="polite" hidden>
+                <span class="ai-process-chip">IA trabajando</span>
+                <p id="aiProcessText">Analizando contenido...</p>
+                <div class="ai-progress">
+                  <div class="ai-progress-bar" id="aiProgressBar"></div>
+                </div>
+                <small id="aiProgressValue">0%</small>
+              </div>
+
+              <div class="ai-cta-zone">
+                <button class="ai-main-cta" id="aiEnhanceBtn" type="button">Mejorar esta publicacion con IA</button>
+                <div class="ai-secondary-actions" id="aiSecondaryActions" hidden>
+                  <button class="btn btn-ghost ai-action-btn" id="aiToggleVersion" type="button">Ver version original</button>
+                  <button class="btn btn-primary ai-action-btn" id="aiResimulateBtn" type="button">Volver a simular</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="ai-side-panel">
+          <article class="ai-side-card" id="aiCompareCard" hidden>
+            <h4>Impacto de la optimizacion</h4>
+            <ul>
+              <li>Titulo mas atractivo y especifico para captar interes.</li>
+              <li>Descripcion con mejor claridad comercial y mayor confianza.</li>
+              <li>Itinerario mas estructurado para reducir dudas del viajero.</li>
+              <li>Oferta con mayor potencial de consulta y conversion.</li>
+            </ul>
+          </article>
+
+          <article class="ai-side-card ai-value-card">
+            <h4>Como aporta valor esta funcionalidad?</h4>
+            <p>La mejora de publicaciones con IA puede ayudar a los operadores a presentar mejor sus planes turisticos, comunicar con mayor claridad lo que ofrecen y aumentar el interes de los viajeros. Esta capacidad puede formar parte de un servicio adicional dentro del modelo de monetizacion de Ruteo.</p>
+            <p class="ai-value-line">Mas claridad en la oferta puede traducirse en mejores tasas de consulta y conversion.</p>
+          </article>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <div class="seat-modal" id="seatSimulationModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="seatModalTitle">
+    <div class="seat-modal-shell">
+      <button class="seat-modal-close" id="seatModalClose" aria-label="Cerrar simulacion de asientos">x</button>
+      <header class="seat-modal-header">
+        <p class="kicker">Reserva y cupos</p>
+        <h3 id="seatModalTitle">Seleccion de asientos</h3>
+        <p class="seat-modal-subtitle">Simulacion interactiva del proceso de reserva dentro de Ruteo</p>
+        <p class="seat-modal-copy">El usuario puede visualizar la distribucion del bus, elegir su asiento y avanzar al paso de pago de manera clara y organizada.</p>
+      </header>
+      <div class="seat-modal-layout">
+        <div class="seat-modal-phone">
+          <iframe id="seatSimulationFrame" src="ruteo_seleccion_asientos_mockup.html" title="Simulacion de seleccion de asientos" loading="lazy"></iframe>
+        </div>
+        <aside class="seat-modal-side">
+          <article class="seat-side-card">
+            <h4>Flujo que se demuestra</h4>
+            <ul>
+              <li>Seleccion de un asiento disponible.</li>
+              <li>Validacion visual del estado seleccionado.</li>
+              <li>Confirmacion de reserva temporal.</li>
+              <li>Paso siguiente orientado a pago.</li>
+            </ul>
+          </article>
+          <article class="seat-side-card">
+            <h4>Valor funcional</h4>
+            <p>Esta experiencia evidencia una reserva mas ordenada, reduce errores operativos y mejora la claridad para el viajero antes del pago.</p>
+            <button class="btn btn-ghost" id="seatResetSimulation" type="button">Reiniciar simulacion</button>
+          </article>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+
+<div style="display: flex; justify-content: center; padding: 2rem 0; background: var(--color-background-secondary); border-radius: var(--border-radius-lg);">
+
+  <div style="width: 320px; background: #0f172a; border-radius: 44px; padding: 10px; box-shadow: 0 0 0 1px #1e293b;">
+
+    <div style="background: #F8FAFC; border-radius: 36px; overflow: hidden; height: 680px; position: relative; display: flex; flex-direction: column;">
+
+      <!-- Status bar -->
+      <div style="background: #F8FAFC; display: flex; justify-content: space-between; align-items: center; padding: 14px 24px 6px; flex-shrink: 0;">
+        <span style="font-size: 11px; font-weight: 500; color: #334155;">9:41</span>
+        <div style="display: flex; gap: 5px; align-items: center;">
+          <svg width="15" height="10" viewBox="0 0 15 10"><rect x="0" y="3" width="3" height="7" rx="1" fill="#334155"/><rect x="4" y="2" width="3" height="8" rx="1" fill="#334155"/><rect x="8" y="0" width="3" height="10" rx="1" fill="#334155"/><rect x="12" y="0" width="3" height="10" rx="1" fill="#E2E8F0"/></svg>
+          <svg width="16" height="10" viewBox="0 0 16 10"><path d="M8 1.5C10.5 1.5 12.7 2.6 14.2 4.3L15.5 3C13.7 1.1 11.2 0 8.5 0 5.8 0 3.3 1.1 1.5 3L2.8 4.3C4.3 2.6 6.3 1.5 8 1.5Z" fill="#334155"/><path d="M8 4C9.8 4 11.4 4.8 12.5 6L13.8 4.7C12.4 3.3 10.5 2.5 8.5 2.5 6.5 2.5 4.6 3.3 3.2 4.7L4.5 6C5.6 4.8 7.2 4 8 4Z" fill="#334155"/><circle cx="8" cy="8" r="1.5" fill="#334155"/></svg>
+          <svg width="24" height="11" viewBox="0 0 24 11"><rect x="0" y="1" width="20" height="9" rx="2" stroke="#334155" stroke-width="1" fill="none"/><rect x="1.5" y="2.5" width="13" height="6" rx="1" fill="#334155"/><rect x="21" y="3.5" width="2" height="4" rx="1" fill="#334155"/></svg>
+        </div>
+      </div>
+
+      <!-- Scrollable content -->
+      <div style="flex: 1; overflow-y: auto; overflow-x: hidden; padding-bottom: 64px;">
+
+        <!-- Page title -->
+        <div style="padding: 10px 20px 16px;">
+          <p style="font-size: 20px; font-weight: 500; color: #334155; margin: 0 0 14px;">Mis tickets</p>
+
+          <!-- Tabs -->
+          <div style="display: flex; background: #E2E8F0; border-radius: 10px; padding: 3px; gap: 3px;">
+            <div style="flex: 1; background: white; border-radius: 8px; padding: 7px 0; text-align: center; box-shadow: 0 1px 2px rgba(0,0,0,0.06);">
+              <span style="font-size: 12px; font-weight: 500; color: #2563EB;">Próximos</span>
+            </div>
+            <div style="flex: 1; border-radius: 8px; padding: 7px 0; text-align: center;">
+              <span style="font-size: 12px; color: #64748b;">Historial</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ticket 1 — Reservado (próximo) -->
+        <div style="margin: 0 20px 14px;">
+          <div style="background: white; border: 1px solid #E2E8F0; border-radius: 16px; overflow: hidden;">
+
+            <!-- Top color strip -->
+            <div style="background: linear-gradient(135deg, #1d4ed8, #2563EB); height: 6px;"></div>
+
+            <!-- Ticket body -->
+            <div style="padding: 14px 14px 0;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                <div>
+                  <p style="font-size: 14px; font-weight: 500; color: #334155; margin: 0 0 3px;">Cartagena y Playa Blanca</p>
+                  <div style="display: flex; align-items: center; gap: 4px;">
+                    <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1C3.8 1 2.5 2.3 2.5 4c0 2.5 3 5 3 5s3-2.5 3-5c0-1.7-1.3-3-3-3z" fill="#94a3b8"/><circle cx="5.5" cy="4" r="1.2" fill="white"/></svg>
+                    <span style="font-size: 11px; color: #64748b;">Cartagena, Bolívar</span>
+                  </div>
+                </div>
+                <div style="background: #DCFCE7; border-radius: 20px; padding: 4px 10px;">
+                  <span style="font-size: 10px; font-weight: 500; color: #16a34a;">Reservado</span>
+                </div>
+              </div>
+
+              <!-- Info row -->
+              <div style="display: flex; gap: 12px; margin-bottom: 12px;">
+                <div style="display: flex; align-items: center; gap: 5px;">
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1.5" y="2.5" width="10" height="9" rx="1.5" stroke="#94a3b8" stroke-width="1.1"/><path d="M4.5 1.5v2M8.5 1.5v2M1.5 5.5h10" stroke="#94a3b8" stroke-width="1.1" stroke-linecap="round"/></svg>
+                  <span style="font-size: 11px; color: #64748b;">28 abr 2026</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 5px;">
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5" stroke="#94a3b8" stroke-width="1.1"/><path d="M6.5 4v3l2 1" stroke="#94a3b8" stroke-width="1.1" stroke-linecap="round"/></svg>
+                  <span style="font-size: 11px; color: #64748b;">3 días</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 5px;">
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 10s1.5-3 4.5-3 4.5 3 4.5 3" stroke="#94a3b8" stroke-width="1.1" stroke-linecap="round"/><circle cx="6.5" cy="5" r="2.5" stroke="#94a3b8" stroke-width="1.1"/></svg>
+                  <span style="font-size: 11px; color: #64748b;">Asiento 12</span>
+                </div>
+              </div>
+
+              <!-- Divider dashed -->
+              <div style="display: flex; align-items: center; margin: 0 -14px;">
+                <div style="width: 14px; height: 14px; background: #F8FAFC; border-radius: 0 14px 14px 0; border: 1px solid #E2E8F0; border-left: none; flex-shrink: 0;"></div>
+                <div style="flex: 1; border-top: 1.5px dashed #E2E8F0;"></div>
+                <div style="width: 14px; height: 14px; background: #F8FAFC; border-radius: 14px 0 0 14px; border: 1px solid #E2E8F0; border-right: none; flex-shrink: 0;"></div>
+              </div>
+
+              <!-- QR + price section -->
+              <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 0 14px;">
+                <!-- Mini QR -->
+                <div style="background: white; border: 1px solid #E2E8F0; border-radius: 8px; padding: 5px; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center;">
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <rect x="2" y="2" width="14" height="14" rx="2" fill="#334155"/>
+                    <rect x="5" y="5" width="8" height="8" rx="1" fill="white"/>
+                    <rect x="7" y="7" width="4" height="4" fill="#334155"/>
+                    <rect x="24" y="2" width="14" height="14" rx="2" fill="#334155"/>
+                    <rect x="27" y="5" width="8" height="8" rx="1" fill="white"/>
+                    <rect x="29" y="7" width="4" height="4" fill="#334155"/>
+                    <rect x="2" y="24" width="14" height="14" rx="2" fill="#334155"/>
+                    <rect x="5" y="27" width="8" height="8" rx="1" fill="white"/>
+                    <rect x="7" y="29" width="4" height="4" fill="#334155"/>
+                    <rect x="24" y="20" width="4" height="4" fill="#334155"/>
+                    <rect x="30" y="20" width="4" height="4" fill="#334155"/>
+                    <rect x="24" y="26" width="4" height="4" fill="#334155"/>
+                    <rect x="30" y="26" width="4" height="4" fill="#334155"/>
+                    <rect x="20" y="24" width="3" height="3" fill="#334155"/>
+                    <rect x="20" y="30" width="3" height="3" fill="#334155"/>
+                    <rect x="36" y="30" width="3" height="3" fill="#334155"/>
+                  </svg>
+                </div>
+                <div style="flex: 1; padding-left: 14px;">
+                  <p style="font-size: 10px; color: #94a3b8; margin: 0 0 2px;"># Ticket</p>
+                  <p style="font-size: 12px; font-weight: 500; color: #334155; margin: 0 0 6px;">#4720</p>
+                  <p style="font-size: 15px; font-weight: 500; color: #2563EB; margin: 0;">$850.000 <span style="font-size: 10px; color: #94a3b8; font-weight: 400;">COP</span></p>
+                </div>
+                <div style="background: #2563EB; border-radius: 10px; padding: 8px 12px; text-align: center;">
+                  <span style="font-size: 11px; font-weight: 500; color: white;">Ver QR</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ticket 2 — Confirmado -->
+        <div style="margin: 0 20px 14px;">
+          <div style="background: white; border: 1px solid #E2E8F0; border-radius: 16px; overflow: hidden;">
+            <div style="background: linear-gradient(135deg, #15803d, #22C55E); height: 6px;"></div>
+            <div style="padding: 14px 14px 0;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                <div>
+                  <p style="font-size: 14px; font-weight: 500; color: #334155; margin: 0 0 3px;">Río Claro y Cueva del Cóndor</p>
+                  <div style="display: flex; align-items: center; gap: 4px;">
+                    <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1C3.8 1 2.5 2.3 2.5 4c0 2.5 3 5 3 5s3-2.5 3-5c0-1.7-1.3-3-3-3z" fill="#94a3b8"/><circle cx="5.5" cy="4" r="1.2" fill="white"/></svg>
+                    <span style="font-size: 11px; color: #64748b;">Antioquia</span>
+                  </div>
+                </div>
+                <div style="background: #DCFCE7; border-radius: 20px; padding: 4px 10px;">
+                  <span style="font-size: 10px; font-weight: 500; color: #16a34a;">Confirmado</span>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 12px; margin-bottom: 12px;">
+                <div style="display: flex; align-items: center; gap: 5px;">
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1.5" y="2.5" width="10" height="9" rx="1.5" stroke="#94a3b8" stroke-width="1.1"/><path d="M4.5 1.5v2M8.5 1.5v2M1.5 5.5h10" stroke="#94a3b8" stroke-width="1.1" stroke-linecap="round"/></svg>
+                  <span style="font-size: 11px; color: #64748b;">05 may 2026</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 5px;">
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5" stroke="#94a3b8" stroke-width="1.1"/><path d="M6.5 4v3l2 1" stroke="#94a3b8" stroke-width="1.1" stroke-linecap="round"/></svg>
+                  <span style="font-size: 11px; color: #64748b;">2 días</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 5px;">
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 10s1.5-3 4.5-3 4.5 3 4.5 3" stroke="#94a3b8" stroke-width="1.1" stroke-linecap="round"/><circle cx="6.5" cy="5" r="2.5" stroke="#94a3b8" stroke-width="1.1"/></svg>
+                  <span style="font-size: 11px; color: #64748b;">Asiento 7</span>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: center; margin: 0 -14px;">
+                <div style="width: 14px; height: 14px; background: #F8FAFC; border-radius: 0 14px 14px 0; border: 1px solid #E2E8F0; border-left: none; flex-shrink: 0;"></div>
+                <div style="flex: 1; border-top: 1.5px dashed #E2E8F0;"></div>
+                <div style="width: 14px; height: 14px; background: #F8FAFC; border-radius: 14px 0 0 14px; border: 1px solid #E2E8F0; border-right: none; flex-shrink: 0;"></div>
+              </div>
+
+              <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 0 14px;">
+                <div style="background: white; border: 1px solid #E2E8F0; border-radius: 8px; padding: 5px; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center;">
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <rect x="2" y="2" width="14" height="14" rx="2" fill="#334155"/>
+                    <rect x="5" y="5" width="8" height="8" rx="1" fill="white"/>
+                    <rect x="7" y="7" width="4" height="4" fill="#334155"/>
+                    <rect x="24" y="2" width="14" height="14" rx="2" fill="#334155"/>
+                    <rect x="27" y="5" width="8" height="8" rx="1" fill="white"/>
+                    <rect x="29" y="7" width="4" height="4" fill="#334155"/>
+                    <rect x="2" y="24" width="14" height="14" rx="2" fill="#334155"/>
+                    <rect x="5" y="27" width="8" height="8" rx="1" fill="white"/>
+                    <rect x="7" y="29" width="4" height="4" fill="#334155"/>
+                    <rect x="24" y="20" width="5" height="5" fill="#334155"/>
+                    <rect x="31" y="20" width="5" height="5" fill="#334155"/>
+                    <rect x="24" y="27" width="5" height="5" fill="#334155"/>
+                    <rect x="31" y="27" width="5" height="5" fill="#334155"/>
+                    <rect x="20" y="22" width="3" height="3" fill="#334155"/>
+                    <rect x="20" y="29" width="3" height="3" fill="#334155"/>
+                  </svg>
+                </div>
+                <div style="flex: 1; padding-left: 14px;">
+                  <p style="font-size: 10px; color: #94a3b8; margin: 0 0 2px;"># Ticket</p>
+                  <p style="font-size: 12px; font-weight: 500; color: #334155; margin: 0 0 6px;">#44563</p>
+                  <p style="font-size: 15px; font-weight: 500; color: #2563EB; margin: 0;">$360.000 <span style="font-size: 10px; color: #94a3b8; font-weight: 400;">COP</span></p>
+                </div>
+                <div style="background: #2563EB; border-radius: 10px; padding: 8px 12px; text-align: center;">
+                  <span style="font-size: 11px; font-weight: 500; color: white;">Ver QR</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact operator card -->
+        <div style="margin: 0 20px 20px;">
+          <div style="background: #F0FDF4; border: 1px solid #bbf7d0; border-radius: 14px; padding: 14px; display: flex; align-items: center; gap: 12px;">
+            <div style="width: 36px; height: 36px; background: #22C55E; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M15.5 12.5c0 .3-.1.6-.2.9-.1.3-.3.6-.6.8-.4.4-.9.6-1.4.6-.4 0-.8-.1-1.2-.3l-1-.5c-1.6-.9-3-2.3-3.9-3.9L6.7 9c-.2-.4-.3-.8-.3-1.2 0-.5.2-1 .6-1.4.2-.2.5-.4.8-.6.3-.1.6-.2.9-.2.1 0 .2 0 .3.1.1 0 .2.1.3.2L11 7.7c.1.1.2.3.2.4 0 .1 0 .3-.1.4l-.3.6c0 .1-.1.2-.1.3 0 .1 0 .2.1.3l1.6 1.6c.1.1.2.1.3.1.1 0 .2 0 .3-.1l.6-.3c.1-.1.3-.1.4-.1.2 0 .3.1.4.2l1.8 1.8c.1.1.2.2.2.3 0 .1.1.2.1.3z" stroke="white" stroke-width="1.2" fill="none"/></svg>
+            </div>
+            <div style="flex: 1;">
+              <p style="font-size: 12px; font-weight: 500; color: #15803d; margin: 0 0 2px;">¿Un cambio de planes?</p>
+              <p style="font-size: 11px; color: #4ade80; margin: 0; color: #166534;">Contacta al operador directamente</p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 4px;">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 12l4-4-4-4" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom nav bar -->
+      <div style="position: absolute; bottom: 0; left: 0; right: 0; background: white; border-top: 1px solid #E2E8F0; height: 64px; display: flex; align-items: center; justify-content: space-around; padding: 0 10px 6px; border-radius: 0 0 36px 36px;">
+
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 3px; flex: 1;">
+          <div style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M2 7.5L8.5 2L15 7.5V15H11V11H6V15H2V7.5Z" stroke="#94a3b8" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          </div>
+          <span style="font-size: 10px; color: #94a3b8;">Inicio</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 3px; flex: 1;">
+          <div style="width: 32px; height: 32px; background: #EFF6FF; border-radius: 10px; display: flex; align-items: center; justify-content: center; position: relative;">
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><rect x="2" y="4" width="13" height="9" rx="2" fill="#2563EB" opacity=".15" stroke="#2563EB" stroke-width="1.4"/><path d="M5 8h7M5 10.5h4" stroke="#2563EB" stroke-width="1.2" stroke-linecap="round"/><path d="M11 4V3M6 4V3" stroke="#2563EB" stroke-width="1.2" stroke-linecap="round"/></svg>
+            <div style="position: absolute; top: -2px; right: -2px; width: 10px; height: 10px; background: #2563EB; border-radius: 50%; border: 2px solid #F8FAFC; display: flex; align-items: center; justify-content: center;">
+              <span style="font-size: 7px; color: white; font-weight: 500; line-height: 1;">2</span>
+            </div>
+          </div>
+          <span style="font-size: 10px; color: #2563EB; font-weight: 500;">Mis tickets</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 3px; flex: 1;">
+          <div style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><circle cx="8.5" cy="6" r="3" stroke="#94a3b8" stroke-width="1.4"/><path d="M3 15c0-3 2.5-5 5.5-5s5.5 2 5.5 5" stroke="#94a3b8" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </div>
+          <span style="font-size: 10px; color: #94a3b8;">Perfil</span>
+        </div>
+
+      </div>
+
+      <!-- Home indicator -->
+      <div style="position: absolute; bottom: 5px; left: 50%; transform: translateX(-50%); width: 80px; height: 3px; background: #334155; border-radius: 4px; opacity: 0.2;"></div>
+
+    </div>
+  </div>
+</div>

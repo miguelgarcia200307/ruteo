@@ -1,0 +1,746 @@
+Plataforma móvil para la gestión y comercialización de viajes turísticos terrestres
+(Ruteo)
+Miguel Angel Garcia Daza
+Jhon Jairo Gomez Duran
+Yorfran Yesid Sanjuan Garcia
+Docente:
+Ronald Alexander Vacca Ascanio
+Universidad Popular Del Cesar
+Facultad De Ingenierías y Tecnológicas
+Programación Móvil
+Valledupar, Cesar
+2026
+Tabla de contenido
+II. Introducción.........................................................................................................................4
+III. Identificación del problema............................................................................................. 5
+IV. Justificación del proyecto...................................................................................................6
+V. Población Objetivo...............................................................................................................7
+VI. Objetivos............................................................................................................................. 8
+1. Objetivo general............................................................................................................... 8
+2. Objetivos específicos..................................................................................................... 8
+VII. Descripción funcional de la app.....................................................................................9
+1. Módulo para viajeros......................................................................................................9
+2. Módulo para operadores turísticos...............................................................................10
+3. Sistema de reserva y gestión de cupos........................................................................11
+4. Sistema de pagos.........................................................................................................11
+5. Ticket digital y validación de acceso............................................................................ 12
+6. Funcionalidades que aumentan valor.......................................................................... 12
+XIII. Propuesta de valor y diferenciadores.........................................................................14
+IX. Viabilidad técnica........................................................................................................... 15
+X. Tecnologías y herramientas a utilizar............................................................................17
+XI. Diagrama de casos de uso o flujo general...................................................................19
+1. Flujo del proceso de reserva y validación de viaje turístico......................................... 19
+1.1. Requisitos funcionales........................................................................................ 19
+1.2. Casos de uso...................................................................................................... 20
+1.2.1. Consulta de planes turísticos..................................................................... 20
+1.2.2. Visualizar detalle del plan turístico............................................................. 20
+1.2.3. Registrarse o iniciar sesión para reservar..................................................21
+1.2.4. Selección visual de asientos...................................................................... 21
+1.2.5. Reservar viaje.............................................................................................22
+1.2.6. Realizar pago............................................................................................. 22
+1.2.7. Generar ticket digital...................................................................................23
+1.2.8. Validar ticket QR.........................................................................................23
+1.3. Diagrama de casos de uso general del proceso de reserva y validación del viaje
+turístico.......................................................................................................................24
+XII. Mockups......................................................................................................................... 24
+1. Logo............................................................................................................................. 24
+2. Home principal............................................................................................................. 25
+3. Login / Register............................................................................................................ 25
+4. Consulta de tickets.......................................................................................................26
+5. Perfil o ajustes..............................................................................................................26
+6. Selección de asientos.................................................................................................. 27
+XIII. Modelo de monetización.............................................................................................. 27
+1. Enfoque general del modelo........................................................................................ 27
+2. Ingreso principal: comisión por transacción................................................................. 28
+3. Control de pagos fuera de la plataforma......................................................................28
+4. Modelo para pagos en efectivo y métodos alternativos............................................... 29
+Funcionamiento del sistema.................................................................................29
+5. Seguridad del cupo mediante abonos..........................................................................30
+6. Ingresos por visibilidad (servicios adicionales)............................................................ 30
+6.1. Destacado en resultados de búsqueda...............................................................31
+6.2. Destacado en el marketplace principal............................................................... 31
+6.3 Combo de visibilidad............................................................................................ 31
+7. Verificación de empresas............................................................................................. 31
+8. Herramientas avanzadas basadas en inteligencia artificial......................................... 32
+9. Mejora de publicaciones...............................................................................................32
+10. Notificaciones promocionadas................................................................................... 33
+11. Estructura general del modelo de ingresos................................................................33
+12. Paquetes de servicios adicionales y descuentos por volumen.................................. 34
+13. Conclusión del modelo de monetización....................................................................35
+XIV. Razones para aprobar la propuesta............................................................................35
+XV. Cronograma tentativo de desarrollo............................................................................38
+1. Distribución general por fases......................................................................................41
+Conclusiones........................................................................................................................42
+II. Introducción
+ En Colombia, el turismo terrestre sigue siendo una alternativa importante para
+pasadías, excursiones y viajes grupales, especialmente en pequeñas y medianas empresas que
+conectan a los viajeros con distintos destinos. Sin embargo, buena parte de este sector aún
+opera mediante medios tradicionales como redes sociales, WhatsApp, llamadas y registros
+manuales, lo que limita la organización del servicio y la experiencia del usuario.
+Ante este panorama, la transformación digital se vuelve necesaria. Los usuarios
+demandan procesos más rápidos, claros y confiables para consultar planes, verificar
+disponibilidad y reservar, mientras que los operadores requieren herramientas que les
+permitan administrar su oferta con mayor orden, reducir errores y proyectar una atención más
+profesional. En este contexto, una aplicación móvil representa una solución pertinente, al
+integrar en un solo entorno funciones de consulta, reserva, comunicación y seguimiento.
+Desde el enfoque académico, esta propuesta se relaciona directamente con la
+asignatura de Programación Móvil, ya que plantea el diseño de una solución orientada a una
+necesidad real mediante tecnologías, principios de desarrollo móvil y criterios de experiencia
+de usuario. Así, Ruteo se plantea como una iniciativa que articula análisis del problema,
+diseño funcional y aplicación técnica dentro de un caso concreto del turismo terrestre.
+III. Identificación del problema
+En el sector del turismo terrestre en Colombia, especialmente en pequeñas y medianas
+empresas que ofrecen pasadías, tours y alquiler de buses, se presenta una baja digitalización
+de los procesos comerciales y operativos. Muchas de estas empresas aún dependen de
+WhatsApp, redes sociales, hojas de cálculo y registros manuales para promocionar sus
+servicios, gestionar reservas, actualizar precios, organizar rutas y comunicarse con los
+clientes. Esto dificulta brindar una atención ágil, ordenada y confiable.
+El problema se presenta principalmente en los procesos de promoción, venta, reserva,
+gestión de rutas y control de disponibilidad, donde no existe un sistema centralizado que
+integre la información del servicio. Como consecuencia, los operadores turísticos tienen
+dificultades para mantener actualizada su oferta, responder con rapidez a cambios en rutas o
+condiciones del viaje y ofrecer una experiencia más profesional. A su vez, los usuarios
+encuentran información dispersa, poca claridad en los procesos y menor confianza al
+momento de reservar o pagar.
+Esta situación afecta directamente a los operadores turísticos terrestres, porque
+incrementa la carga administrativa, favorece errores en precios, cupos y reservas, y limita su
+competitividad. También afecta a los viajeros, quienes enfrentan procesos de consulta y
+compra menos organizados, menor formalidad en la atención y escaso acompañamiento
+digital antes y durante el viaje.
+En consecuencia, la falta de una plataforma móvil especializada genera ineficiencia
+operativa, pérdida de oportunidades comerciales y desconfianza en el usuario, lo que
+evidencia la necesidad de una solución que centralice la oferta turística, facilite la gestión de
+reservas y mejore la experiencia del cliente.
+IV. Justificación del proyecto
+El desarrollo de la aplicación móvil Ruteo se justifica porque responde a una
+necesidad real del sector turístico terrestre: la falta de herramientas digitales que permitan
+organizar, promocionar y comercializar viajes de forma más eficiente. Actualmente, muchos
+operadores pequeños y medianos gestionan sus servicios mediante WhatsApp, redes sociales
+y registros manuales, lo que genera desorden, errores, lentitud en los procesos y poca
+confianza en nuevos clientes. En este contexto, una app especializada resulta relevante
+porque centraliza funciones clave como la publicación de planes, la gestión de reservas, la
+consulta de rutas y la comunicación con el usuario, mejorando tanto la operación interna
+como la experiencia del cliente.
+Su impacto sería importante en el plano empresarial, ya que ayudaría a los operadores
+turísticos a modernizar sus procesos, reducir fallos administrativos y ampliar su alcance
+comercial. En el plano social, aportaría a la transformación digital de un sector donde muchas
+empresas aún tienen dificultades para competir en igualdad de condiciones frente a ofertas
+más estructuradas. Además, facilitaría a los viajeros el acceso a información más clara,
+ordenada y confiable al momento de buscar y reservar planes turísticos.
+Desde el punto de vista académico, el proyecto es pertinente porque permite aplicar
+conocimientos de programación móvil, diseño de interfaces, bases de datos y análisis de
+requerimientos en una solución orientada a una problemática concreta del entorno. Por ello,
+Ruteo no solo es una app útil y viable, sino también una propuesta con valor formativo, social
+y comercial.
+V. Población Objetivo
+La población objetivo del proyecto Ruteo está conformada por dos grupos principales:
+los turistas o viajeros interesados en planes terrestres y los operadores turísticos pequeños y
+medianos, entendidos como aquellos que organizan viajes, comercializan pasadías y tours, y
+también ofrecen servicios de alquiler de buses. Esta definición permite enfocar la aplicación
+en los actores que participan directamente en la oferta y demanda de servicios de turismo
+terrestre.
+Por un lado, los turistas o viajeros constituyen el usuario final de la plataforma. Sus
+principales necesidades son acceder a información clara sobre destinos, rutas, precios, fechas
+y disponibilidad, además de poder consultar y reservar servicios de manera más rápida,
+confiable y organizada.
+Por otro lado, los operadores turísticos pequeños y medianos representan el grupo que
+ofrece servicios dentro de la aplicación. Este grupo necesita una herramienta que les permita
+publicar sus planes, administrar reservas, actualizar precios, organizar cupos, gestionar rutas
+y mejorar la comunicación con los clientes desde un entorno digital centralizado.
+De manera general, la segmentación básica del proyecto se divide en usuarios
+demandantes, representados por los viajeros, y usuarios que ofrecen los servicios,
+representados por los operadores turísticos. En ambos casos, la aplicación busca responder a
+necesidades reales de organización, acceso a la información y eficiencia en la gestión del
+servicio turístico terrestre.
+VI. Objetivos
+1. Objetivo general
+Desarrollar una aplicación móvil para la gestión y comercialización de viajes
+turísticos terrestres que permita a los viajeros consultar y reservar planes, y a los operadores
+publicar ofertas y administrar reservas, con el fin de mejorar la organización del servicio y la
+experiencia del usuario.
+2. Objetivos específicos
+● Diseñar una interfaz móvil intuitiva que permita a los viajeros consultar, filtrar y
+visualizar información de planes turísticos terrestres, incluyendo destinos, fechas,
+precios, rutas y disponibilidad.
+● Implementar un módulo de reservas que permita a los usuarios registrar solicitudes de
+viaje, separar cupos y consultar el estado de sus reservas de forma organizada.
+● Desarrollar un módulo de gestión para operadores turísticos que facilite publicar
+planes, actualizar precios, administrar cupos, modificar rutas y comunicar novedades
+a los clientes desde un entorno centralizado.
+● Integrar funcionalidades de notificación y seguimiento que permitan informar a los
+viajeros sobre cambios de ruta, confirmaciones de reserva, recordatorios y novedades
+relacionadas con el viaje.
+VII. Descripción funcional de la app
+La solución planteada se estructura alrededor de dos tipos principales de usuario: el
+viajero y el operador turístico. Para el viajero, la aplicación facilitará la búsqueda de planes,
+la consulta de información relevante, la reserva de cupos, la selección de asientos, la
+realización de pagos y la consulta de tickets digitales. Para el operador, permitirá publicar
+planes turísticos, administrar la disponibilidad, revisar reservas y validar el ingreso de los
+usuarios mediante códigos QR.
+Este enfoque permite que la aplicación conecte de forma directa la oferta y la
+demanda dentro del turismo terrestre, organizando en un mismo entorno digital actividades
+que normalmente se gestionan por canales separados. En consecuencia, Ruteo se proyecta
+como una herramienta que mejora la experiencia del usuario, reduce errores operativos y
+fortalece la confianza en el proceso de reserva y comercialización del servicio.
+1. Módulo para viajeros
+El viajero podrá ingresar a la aplicación y consultar un catálogo de planes turísticos
+disponibles sin necesidad de registrarse previamente. Desde esta sección podrá explorar
+diferentes opciones publicadas por los operadores, visualizar destinos, fechas, precios, rutas,
+cupos disponibles e imágenes de referencia. Esta funcionalidad permitirá sustituir la
+búsqueda informal en redes sociales o mensajes privados por una experiencia más
+estructurada y fácil de comprender.
+Al seleccionar un plan, el usuario podrá acceder a una vista detallada con información
+más completa, como descripción del viaje, itinerario general, condiciones del servicio, punto
+de salida, horario estimado, precio, disponibilidad y material visual asociado. El propósito de
+esta sección es ofrecer suficiente información para facilitar la toma de decisión y generar
+mayor confianza al momento de reservar.
+Cuando el viajero decida reservar, la aplicación solicitará registro o inicio de sesión.
+Esto permitirá asociar la reserva a una cuenta personal, almacenar el historial de compras o
+reservas y facilitar la consulta posterior de tickets y movimientos dentro de la aplicación.
+Una vez autenticado, el usuario podrá seleccionar su asiento dentro de una
+representación visual del vehículo, en aquellos planes que manejen asignación de puestos.
+Esta funcionalidad aportará claridad sobre la disponibilidad real y ayudará a reducir errores o
+duplicidades en la asignación de cupos.
+Después de seleccionar el asiento, el viajero podrá confirmar la reserva y continuar
+con el proceso de pago o separación del cupo, de acuerdo con las condiciones definidas por el
+operador turístico. Finalmente, la aplicación generará un ticket digital asociado a la reserva,
+el cual podrá ser consultado desde la cuenta del usuario y utilizado posteriormente para la
+validación del ingreso al viaje.
+2. Módulo para operadores turísticos
+El operador turístico contará con un módulo orientado a la publicación y
+administración de sus servicios. Desde este espacio podrá registrar planes turísticos con
+información básica y funcional, como nombre del plan, destino, fecha, precio, descripción,
+capacidad del vehículo, disponibilidad de cupos, rutas e imágenes de apoyo.
+Asimismo, podrá consultar las reservas realizadas por los usuarios, verificar el estado
+de los pagos o separaciones y llevar un control básico de los viajeros asociados a cada salida.
+Esta funcionalidad permitirá reemplazar parte del trabajo manual que actualmente se realiza
+en hojas de cálculo, chats o listas informales.
+El operador también dispondrá de una función de validación de tickets digitales
+mediante código QR. A través de esta herramienta podrá comprobar si una reserva es válida,
+confirmar el ingreso del viajero y registrar su asistencia. Esto fortalece la conexión entre la
+reserva digital y la operación real del servicio turístico.
+3. Sistema de reserva y gestión de cupos
+Uno de los ejes centrales de la aplicación será el proceso de reserva. El sistema
+permitirá que el usuario seleccione un plan turístico, consulte su información, inicie sesión,
+elija asiento y formalice la reserva dentro de un flujo ordenado y comprensible.
+La aplicación verificará la disponibilidad antes de confirmar la operación, con el fin
+de evitar inconsistencias en los cupos y mejorar la confiabilidad del sistema. Además, la
+reserva quedará asociada tanto al usuario como al plan seleccionado, permitiendo mantener
+trazabilidad del proceso y facilitar su posterior consulta.
+Este módulo cumple una función clave en la propuesta, ya que transforma un
+procedimiento que normalmente se realiza mediante mensajes, capturas o registros
+informales en un flujo digital estructurado, visible y centralizado.
+4. Sistema de pagos
+La aplicación contemplará distintas modalidades de pago para adaptarse a la realidad
+operativa del sector. Por una parte, podrá integrar pasarelas de pago digitales como Wompi o
+Mercado Pago para procesar pagos dentro de la plataforma. Por otra, podrá contemplar
+esquemas de pre-reserva, abono o pago parcial cuando el operador así lo defina.
+También se considera la posibilidad de pagos coordinados por medios externos
+cuando las condiciones del servicio así lo requieran. Sin embargo, la aplicación seguirá
+funcionando como punto de registro y control de la reserva, de modo que exista trazabilidad
+sobre el estado del proceso, aun cuando el pago no se complete íntegramente dentro de la
+plataforma.
+Con ello, Ruteo no limita su funcionamiento a un único modelo comercial, sino que se
+adapta a diferentes formas de operación frecuentes en el turismo terrestre.
+5. Ticket digital y validación de acceso
+Una vez confirmada la reserva y validado el pago o la separación del cupo, el sistema
+generará un ticket digital asociado al usuario. Este ticket servirá como comprobante del
+servicio adquirido y estará disponible dentro de la aplicación para su consulta en cualquier
+momento.
+Cada ticket incorporará un código QR único que podrá ser escaneado por el operador
+al momento del abordaje o control de asistencia. Esta funcionalidad permitirá verificar la
+autenticidad de la reserva, evitar reutilización indebida del ticket y registrar el ingreso del
+viajero de manera más organizada.
+La incorporación del ticket digital convierte a la aplicación en una herramienta que no
+solo facilita la comercialización del viaje, sino también el control operativo del servicio.
+6. Funcionalidades que aumentan valor
+Como proyección de crecimiento, Ruteo podrá incorporar funcionalidades adicionales
+que amplíen el valor de la plataforma y fortalezcan su carácter diferenciador dentro del sector
+turístico terrestre.
+Una de estas funciones es el seguimiento del viaje en tiempo real, mediante el cual los
+viajeros podrían consultar la ubicación aproximada del vehículo, el avance de la ruta y
+posibles cambios en el trayecto. Esta mejora aportaría mayor tranquilidad al usuario y
+facilitaría la comunicación durante el desarrollo del viaje.
+También se contempla un módulo de análisis inteligente de rutas, orientado a brindar
+apoyo a los operadores turísticos en la planeación de recorridos. Este componente podría
+considerar variables como tráfico, tiempos estimados, peajes, combustible, estado de las vías
+o restricciones de movilidad, con el objetivo de optimizar la operación.
+Otra evolución importante sería la incorporación de un sistema de cotización para
+alquiler de buses o servicios privados, permitiendo que grupos, empresas o instituciones
+soliciten propuestas personalizadas según número de pasajeros, destino, duración del viaje y
+condiciones requeridas. Esta funcionalidad ampliaría el alcance de la app más allá de los
+planes turísticos tradicionales.
+De igual forma, podrían desarrollarse funciones avanzadas apoyadas en inteligencia
+artificial, como recomendaciones de planes según preferencias del usuario, mejora automática
+de publicaciones para operadores, generación de descripciones más atractivas o segmentación
+inteligente de promociones y notificaciones.
+Finalmente, en futuras fases, la aplicación también podría integrar herramientas más
+robustas de comunicación, reputación y fidelización, como valoraciones de viajeros, sistema
+de comentarios, historial de operador verificado, promociones personalizadas, programas de
+puntos o recordatorios automatizados. Estas funciones fortalecerían la relación entre usuarios
+y operadores, aumentando la confianza y el valor percibido de la plataforma.
+En conjunto, estas evoluciones futuras no son indispensables para el funcionamiento
+base de la propuesta, pero sí representan una ruta de crecimiento coherente que permitiría a
+Ruteo consolidarse como una plataforma más completa, competitiva e innovadora dentro del
+turismo terrestre.
+XIII. Propuesta de valor y diferenciadores
+Ruteo propone una solución móvil especializada para la gestión y comercialización de
+viajes turísticos terrestres, dirigida a pequeñas y medianas empresas que hoy operan mediante
+canales dispersos como WhatsApp, redes sociales y registros manuales. Su propuesta de valor
+consiste en centralizar en una sola plataforma la publicación de planes turísticos, la
+administración de reservas, la gestión de rutas, la selección de asientos, la validación de
+tickets y la comunicación con los viajeros, permitiendo una operación más organizada y una
+experiencia de usuario más clara y confiable.
+Lo que diferencia a Ruteo es que no se plantea como una aplicación turística genérica
+enfocada solo en mostrar destinos, sino como una plataforma operativa y comercial orientada
+específicamente al turismo terrestre. Mientras muchas alternativas actuales funcionan
+únicamente como vitrinas informativas o dependen de conversaciones informales para
+concretar reservas, Ruteo busca atender procesos que suelen generar dificultades reales en
+este sector, como el control de cupos, la organización de rutas, la actualización de horarios, la
+confirmación de reservas y la comunicación ante cambios de última hora.
+Frente a alternativas como redes sociales, grupos de WhatsApp o páginas informales,
+la principal ventaja de Ruteo es la centralización estructurada de la información y de las
+transacciones. En lugar de depender de mensajes dispersos o publicaciones temporales, el
+viajero podrá consultar en un solo lugar los planes disponibles, fechas, precios, rutas y
+disponibilidad, y realizar su reserva con mayor orden y seguridad. Para los operadores, esto
+reduce trabajo manual, disminuye errores y mejora la capacidad de administrar su oferta de
+manera más profesional.
+Otro diferenciador importante es el uso práctico de tecnología móvil para resolver
+necesidades concretas del servicio. Funciones como selección visual de asientos, tickets
+digitales con código QR, seguimiento del viaje en tiempo real e integración con mapas
+aportan control operativo, mayor transparencia para el usuario y mejor capacidad de
+respuesta durante la prestación del servicio. Así, la app no solo moderniza la venta, sino
+también la gestión del viaje.
+Además, Ruteo contempla tanto la comercialización de planes turísticos como el
+alquiler de buses para grupos privados, lo que amplía su utilidad y le permite atender una
+necesidad que normalmente no se encuentra integrada en una sola solución.
+En síntesis, Ruteo ofrece una plataforma móvil que organiza, profesionaliza y hace
+más confiable la relación entre operadores turísticos terrestres y viajeros, integrando
+promoción, reserva y control operativo. Su valor no está solo en digitalizar la oferta, sino en
+cubrir necesidades de gestión y coordinación que todavía no son atendidas de forma completa
+por las alternativas actuales.
+IX. Viabilidad técnica
+La propuesta Ruteo es técnicamente viable porque su MVP se limita a funciones que
+pueden desarrollarse con herramientas accesibles, bien documentadas y adecuadas para una
+asignatura de Programación Móvil. El proyecto no plantea una plataforma completa desde el
+inicio, sino una primera versión funcional centrada en catálogo de planes, autenticación,
+reservas, selección de asientos, pago o pre-reserva, ticket digital y validación QR.
+La app móvil puede desarrollarse con Flutter y Dart, tecnología adecuada para
+construir desde una sola base de código las pantallas de consulta, detalle, registro, login,
+reserva, ticket y perfil. La complejidad de este módulo es media, porque exige navegación,
+manejo de estado, validaciones y componentes dinámicos, pero sigue siendo factible dentro
+del proyecto porque evita desarrollar versiones separadas y acelera la construcción del
+prototipo.
+El módulo de usuarios puede resolverse con Supabase Auth, encargado del registro,
+inicio de sesión y asociación de reservas con cada cuenta. Su complejidad es baja a media, ya
+que evita crear un sistema de autenticación desde cero. El principal riesgo está en el manejo
+correcto de sesiones y permisos; no obstante, este riesgo es razonable y controlable.
+El backend y la base de datos pueden implementarse con Supabase, donde se
+almacenarían planes turísticos, usuarios, reservas, asientos y tickets. Su complejidad es
+media, porque requiere definir relaciones entre entidades y validar correctamente la
+disponibilidad al reservar. El mayor riesgo técnico está en evitar inconsistencias de cupos o
+asientos duplicados, pero sigue siendo viable si el MVP maneja reglas básicas de validación y
+confirmación, sin intentar resolver escenarios avanzados de alta concurrencia.
+La selección de asientos combina la interfaz en Flutter con la persistencia en
+Supabase. Es uno de los módulos más delicados, con complejidad media a alta, porque debe
+mostrar disponibilidad y asociar cada asiento a una reserva válida. Aun así, es factible si se
+maneja con una representación visual básica del vehículo y validación final antes de
+confirmar la reserva.
+El módulo de mapas y ubicación puede apoyarse en Google Maps API para mostrar
+rutas, referencias geográficas o puntos clave del viaje. Su complejidad es media mientras se
+limite a visualización básica. El riesgo técnico aparece si se intenta incorporar rastreo en
+tiempo real desde el inicio, por lo que esa función debe quedar como mejora futura y no
+como requisito obligatorio del MVP.
+El pago o pre-reserva también hace viable el proyecto. Una integración completa con
+pasarela como Wompi tiene complejidad media a alta y puede consumir bastante tiempo, por
+lo que la opción de pagos externos coordinados mediante WhatsApp, reduce el riesgo técnico
+y permite demostrar el flujo central del negocio sin depender totalmente de una integración
+externa compleja. Esto hace que el proyecto sea más realista para el contexto académico.
+Por su parte, el ticket digital con QR es factible mediante librerías de generación y
+escaneo en Flutter, junto con validaciones desde el backend. Su complejidad es media, y su
+principal reto consiste en asegurar que cada ticket esté ligado a una reserva válida y cambie
+de estado al ser usado. Aun así, es una función alcanzable y coherente con el alcance del
+sistema.
+En conclusión, Ruteo sí puede desarrollarse dentro del curso porque cada tecnología
+cumple una función concreta y el alcance del MVP está controlado. Flutter resuelve la app
+móvil, Supabase cubre autenticación y datos, Google Maps aporta soporte geográfico y el
+sistema de pago reduce la carga de integración. Aunque existen riesgos técnicos en reservas,
+asientos y pagos, estos son manejables si se prioriza una primera versión funcional, bien
+delimitada y sin intentar construir desde el inicio una solución de escala empresarial.
+X. Tecnologías y herramientas a utilizar
+Para el desarrollo de Ruteo se plantea el uso de tecnologías modernas y adecuadas
+para construir una aplicación móvil funcional, escalable y viable dentro del alcance
+académico del proyecto.
+En el desarrollo del frontend se utilizará Flutter con Dart, ya que permite crear
+aplicaciones multiplataforma con una sola base de código, facilitando el desarrollo y
+mantenimiento del sistema. Esta tecnología resulta conveniente para implementar interfaces
+dinámicas y funcionales, como la visualización de planes, reservas, selección de asientos y
+rutas.
+Como entorno principal de desarrollo se empleará Visual Studio Code, mientras que
+Android Studio se utilizará como apoyo para emuladores y herramientas del SDK de
+Android. Esta combinación permite trabajar de forma práctica durante la implementación de
+la app.
+Para el backend y la gestión de datos se utilizará Supabase, debido a que ofrece
+servicios integrados de base de datos, almacenamiento y autenticación. A través de Supabase
+Auth se manejará el registro e inicio de sesión de los usuarios, permitiendo un acceso seguro
+a la plataforma.
+En cuanto a mapas y geolocalización, se integrará la Google Maps API, con el fin de
+mostrar rutas, ubicaciones y seguimiento del viaje en tiempo real. No obstante, se deja abierta
+la posibilidad de evaluar en el futuro otras tecnologías que se ajusten mejor a las necesidades
+del proyecto.
+También se implementarán notificaciones push para enviar avisos relacionados con
+reservas, cambios de ruta, recordatorios y novedades importantes para los usuarios.
+Para los pagos en línea se propone Wompi, por ser una pasarela adecuada para el
+contexto colombiano y por facilitar el proceso de reserva dentro de la aplicación.
+En el diseño de interfaces y prototipos se utilizará Figma, herramienta que permitirá
+estructurar los mockups, definir la navegación y organizar visualmente la experiencia del
+usuario antes del desarrollo.
+Finalmente, para la validación de tickets se emplearán herramientas integradas de
+generación y escaneo de códigos QR, lo que permitirá gestionar el acceso de los viajeros de
+forma más rápida y ordenada.
+En conjunto, estas tecnologías brindan una base sólida para el desarrollo de un
+producto mínimo viable, coherente con los objetivos y funcionalidades planteadas para
+Ruteo.
+XI. Diagrama de casos de uso o flujo general
+1. Flujo del proceso de reserva y validación de viaje turístico
+1.1. Requisitos funcionales
+1.2. Casos de uso
+1.2.1. Consulta de planes turísticos.
+1.2.2. Visualizar detalle del plan turístico
+1.2.3. Registrarse o iniciar sesión para reservar
+1.2.4. Selección visual de asientos
+1.2.5. Reservar viaje
+1.2.6. Realizar pago
+1.2.7. Generar ticket digital
+1.2.8. Validar ticket QR
+1.3. Diagrama de casos de uso general del proceso de reserva y validación del viaje
+turístico
+XII. Mockups
+1. Logo
+2. Home principal
+3. Login / Register
+4. Consulta de tickets
+5. Perfil o ajustes
+6. Selección de asientos
+XIII. Modelo de monetización
+1. Enfoque general del modelo
+El modelo de monetización de Ruteo se fundamenta en un esquema transaccional
+complementado con servicios adicionales de valor para los operadores turísticos. Este
+enfoque se caracteriza por no exigir pagos de suscripción a las empresas, sino por generar
+ingresos únicamente cuando se produce una transacción dentro de la plataforma.
+Este modelo resulta adecuado para el contexto del proyecto, ya que reduce las barreras
+de entrada para los operadores turísticos pequeños y medianos, quienes en muchos casos no
+están dispuestos a asumir costos fijos sin garantizar resultados. De esta manera, Ruteo alinea
+su generación de ingresos con el éxito comercial de sus usuarios, promoviendo un ecosistema
+sostenible y escalable.
+2. Ingreso principal: comisión por transacción
+La principal fuente de ingresos de Ruteo corresponde a la comisión aplicada sobre
+cada transacción realizada dentro de la aplicación. Esta comisión se distribuye de la siguiente
+manera:
+● 4% adicional sobre el valor pagado por el cliente.
+● 4% descontado del valor recibido por la empresa operadora.
+En consecuencia, la comisión total por transacción corresponde al 8% del valor del
+servicio.
+Ejemplo de aplicación
+Para un servicio turístico con un valor de $100.000 COP:
+● El cliente paga: $104.000 COP
+● La empresa recibe: $96.000 COP
+● Margen bruto generado: $8.000 COP
+Sobre este margen se descuenta la comisión de la pasarela de pagos (Wompi), la cual
+corresponde aproximadamente a un 2,65% del valor de la transacción más un cargo fijo y el
+impuesto al valor agregado (IVA) aplicado sobre la comisión. En este caso, la comisión de la
+pasarela es cercana a $4.000 COP, lo que deja una utilidad neta aproximada de $4.000 COP
+para la plataforma.
+Este modelo permite a Ruteo generar ingresos proporcionales al volumen de ventas,
+garantizando sostenibilidad a medida que crece el número de transacciones.
+3. Control de pagos fuera de la plataforma
+Uno de los principales riesgos en los modelos de marketplace es la evasión de
+comisiones mediante la realización de pagos por fuera de la plataforma. Para mitigar este
+riesgo, Ruteo implementa un sistema de incentivos y restricciones orientado a garantizar que
+las transacciones se realicen dentro del entorno digital.
+Entre las estrategias implementadas se encuentran:
+● Generación de tickets digitales con código QR únicamente para pagos realizados en la
+plataforma.
+● Garantía de reserva y respaldo en caso de inconvenientes.
+● Historial de transacciones y trazabilidad del servicio.
+● Validación del acceso al viaje mediante escaneo del código QR.
+De esta manera, se establece que las reservas realizadas fuera de la aplicación no
+cuentan con respaldo ni validación oficial, incentivando el uso del sistema integrado de
+pagos.
+4. Modelo para pagos en efectivo y métodos alternativos
+Ruteo contempla la posibilidad de pagos en efectivo o mediante transferencias
+directas, los cuales se gestionan a través de un sistema de control de saldo similar al utilizado
+en plataformas de reparto.
+En este modelo, cuando un cliente paga directamente al operador, se genera una
+obligación financiera del operador hacia la plataforma correspondiente a la comisión de
+Ruteo.
+Funcionamiento del sistema
+● Cada operador cuenta con un cupo o límite de deuda autorizado.
+● Puede realizar ventas en efectivo hasta alcanzar dicho límite.
+● Una vez alcanzado el cupo, el operador debe saldar su deuda con la plataforma para
+continuar operando.
+Este sistema permite mantener la monetización incluso en transacciones fuera de la
+pasarela de pagos, asegurando la sostenibilidad del modelo.
+Adicionalmente, Ruteo puede implementar mecanismos de control como la
+suspensión temporal del servicio, reducción del cupo o restricciones operativas en caso de
+incumplimiento.
+5. Seguridad del cupo mediante abonos
+La plataforma permite a los operadores definir un porcentaje mínimo de pago para
+asegurar la reserva de un cupo en un viaje. Este porcentaje puede configurarse de forma
+flexible, por ejemplo, entre el 10% y el 30% del valor total del servicio.
+Desde el punto de vista de monetización, Ruteo aplica su comisión sobre el valor
+efectivamente pagado en cada transacción. En consecuencia, si el usuario realiza un abono
+parcial, la comisión se calcula sobre dicho abono, y posteriormente se aplica nuevamente
+sobre el saldo restante cuando se complete el pago.
+Este mecanismo facilita el acceso a los servicios por parte de los usuarios, al tiempo
+que permite a la plataforma generar ingresos de manera progresiva.
+6. Ingresos por visibilidad (servicios adicionales)
+Ruteo incorpora un conjunto de servicios adicionales orientados a mejorar la
+visibilidad de los operadores dentro del marketplace. Estos servicios funcionan como
+herramientas opcionales de promoción y posicionamiento.
+6.1. Destacado en resultados de búsqueda
+Permite que un tour aparezca en las primeras posiciones al realizar búsquedas dentro
+de la aplicación.
+Valor estimado: entre $10.000 y $20.000 COP por publicación.
+6.2. Destacado en el marketplace principal
+Permite que el tour sea mostrado en la sección principal de la aplicación como
+recomendado.
+Valor estimado: entre $15.000 y $30.000 COP.
+6.3 Combo de visibilidad
+Incluye posicionamiento prioritario tanto en búsquedas como en el marketplace
+principal.
+Valor estimado: entre $25.000 y $50.000 COP.
+Estos servicios representan una fuente de ingresos directa que no depende del
+volumen de ventas, y permiten a los operadores mejorar su alcance comercial.
+7. Verificación de empresas
+Ruteo contempla la implementación de un sistema de verificación de operadores
+turísticos, mediante el cual las empresas pueden obtener un distintivo de confianza dentro de
+la plataforma.
+Este distintivo busca generar mayor credibilidad frente a los usuarios, incrementando
+la probabilidad de conversión.
+El modelo de cobro se plantea de la siguiente manera:
+● Pago periódico por verificación (por ejemplo, $80.000 COP cada tres meses).
+Este servicio aporta valor tanto a la plataforma como a los operadores, al fortalecer la
+percepción de seguridad y profesionalismo.
+8. Herramientas avanzadas basadas en inteligencia artificial
+Como parte de la evolución del proyecto, se plantea la implementación de un módulo
+de análisis inteligente de rutas, el cual permitirá a los operadores obtener información
+relevante para la planificación de sus servicios.
+Entre las funcionalidades se incluyen:
+● Análisis de condiciones de tráfico.
+● Estimación de tiempos de desplazamiento.
+● Cálculo de costos asociados (combustible, peajes).
+● Identificación de incidentes o restricciones en la vía.
+Este servicio podrá ofrecerse como una funcionalidad premium mediante un esquema
+de pago por uso o suscripción de bajo costo.
+9. Mejora de publicaciones
+Se propone un servicio adicional orientado a optimizar la calidad de los contenidos
+publicados por los operadores. Este módulo permitirá mejorar automáticamente aspectos
+como:
+● Redacción de descripciones.
+● Optimización de títulos.
+● Presentación del contenido.
+El objetivo es incrementar la tasa de conversión de los tours mediante contenido más
+atractivo y estructurado.
+Valor estimado: entre $10.000 y $20.000 COP mensual.
+10. Notificaciones promocionadas
+Ruteo incorpora un sistema de notificaciones promocionadas que permite a los
+operadores enviar mensajes directos a los usuarios de la aplicación.
+Este servicio puede ser segmentado geográficamente, permitiendo enviar
+notificaciones a usuarios ubicados en ciudades específicas, como Valledupar, Santa Marta o
+Bogotá.
+Asimismo, se contempla la posibilidad de personalizar el contenido del mensaje
+promocional, generando un canal de marketing directo dentro de la plataforma.
+Valor estimado: entre $5.000 y $20.000 COP por campaña.
+Este mecanismo representa una herramienta efectiva para aumentar la visibilidad de
+los servicios y dinamizar la demanda.
+11. Estructura general del modelo de ingresos
+El modelo de monetización de Ruteo se compone de las siguientes fuentes principales:
+● Comisión por transacción (fuente principal).
+● Servicios de visibilidad y posicionamiento.
+● Verificación de empresas.
+● Servicios digitales adicionales (mejora de publicaciones, notificaciones
+promocionadas).
+● Funcionalidades avanzadas (inteligencia artificial para análisis de rutas).
+Este enfoque permite diversificar las fuentes de ingreso, reducir la dependencia de un
+único canal y garantizar la sostenibilidad del proyecto a largo plazo.
+12. Paquetes de servicios adicionales y descuentos por volumen
+Con el fin de incentivar el uso de las herramientas avanzadas disponibles en la
+plataforma, Ruteo implementa un esquema de contratación múltiple de servicios adicionales,
+el cual permite a los operadores turísticos acceder a varios beneficios de manera simultánea
+mediante planes agrupados.
+Este modelo se basa en la posibilidad de que las empresas seleccionen y contraten
+diferentes servicios dentro de un mismo periodo de tiempo, tales como:
+● Mejora de publicaciones mediante inteligencia artificial.
+● Herramientas avanzadas de análisis de rutas.
+● Servicios de visibilidad (destacados en búsqueda y marketplace).
+● Verificación de empresa, entre otros.
+A diferencia de la contratación individual de cada servicio, la plataforma ofrece la
+opción de adquirir estos beneficios en conjunto a través de paquetes personalizados, lo que
+permite optimizar costos para el operador.
+En este sentido, Ruteo establece un sistema de descuentos progresivos basado en la
+cantidad de servicios contratados o en el tiempo de contratación. Estos descuentos pueden
+oscilar entre un 10% y un 30% sobre el valor total de los servicios seleccionados,
+dependiendo de la combinación elegida.
+Este enfoque busca cumplir múltiples objetivos:
+● Incentivar la adopción de herramientas que mejoran la calidad de los servicios
+ofrecidos.
+● Aumentar el uso recurrente de funcionalidades dentro de la plataforma.
+● Generar mayor valor percibido por parte de los operadores turísticos.
+● Incrementar los ingresos de la plataforma mediante la venta de servicios agrupados.
+Adicionalmente, este modelo permite a Ruteo adaptarse a diferentes perfiles de
+operadores, desde aquellos que requieren soluciones básicas hasta aquellos que buscan
+maximizar su posicionamiento y eficiencia operativa mediante el uso integral de la
+plataforma.
+13. Conclusión del modelo de monetización
+El modelo de monetización de Ruteo está diseñado para ser accesible, escalable y
+alineado con las necesidades del sector turístico terrestre. Al eliminar costos fijos y centrarse
+en la generación de ingresos por uso, la plataforma facilita la adopción por parte de
+operadores turísticos y promueve un crecimiento orgánico basado en el volumen de
+transacciones.
+Adicionalmente, la incorporación de servicios complementarios permite ampliar las
+fuentes de ingreso sin afectar la experiencia del usuario, consolidando a Ruteo como una
+solución integral que combina funcionalidades operativas, comerciales y tecnológicas dentro
+de un mismo entorno digital.
+XIV. Razones para aprobar la propuesta
+La propuesta del proyecto Ruteo merece ser aprobada porque responde a una
+problemática real y claramente identificada dentro del sector del turismo terrestre,
+especialmente en pequeñas y medianas empresas que actualmente gestionan sus servicios
+mediante canales dispersos como WhatsApp, redes sociales y registros manuales. Esta
+situación genera desorden en la operación, dificultades para actualizar la información, errores
+en reservas y menor confianza por parte de los usuarios, lo que evidencia la necesidad de una
+solución digital especializada que centralice los procesos principales del servicio turístico.
+Una de las principales razones para aprobar esta propuesta radica en su pertinencia
+frente al contexto analizado. Ruteo no surge como una idea abstracta, sino como una
+respuesta concreta a necesidades existentes en un sector que presenta bajos niveles de
+digitalización. La aplicación plantea una mejora directa sobre procesos fundamentales como
+la promoción de planes turísticos, la administración de reservas, la gestión de rutas, la
+disponibilidad de cupos y la comunicación con los viajeros. En ese sentido, el proyecto no
+solo identifica adecuadamente un problema, sino que también formula una solución
+coherente, estructurada y funcional para atenderlo.
+Otra razón de peso para su aprobación es su clara propuesta de valor. Ruteo no se
+limita a ser una aplicación informativa para mostrar destinos turísticos, sino que se proyecta
+como una plataforma operativa y comercial enfocada específicamente en el turismo terrestre.
+Esta diferenciación es importante, ya que muchas alternativas actuales funcionan únicamente
+como vitrinas de información o dependen de conversaciones informales para concretar
+reservas. En contraste, Ruteo centraliza la publicación de servicios, la gestión de reservas, la
+selección de asientos, la validación de tickets y la comunicación entre operadores y viajeros,
+lo cual fortalece la organización del servicio y mejora la experiencia del usuario.
+La propuesta también merece ser aprobada porque presenta beneficios concretos tanto
+para los operadores turísticos como para los viajeros. Para las empresas, la plataforma
+representa una herramienta que les permite modernizar sus procesos, reducir errores
+administrativos, ampliar su alcance comercial y administrar de manera más profesional su
+oferta de servicios. Para los usuarios, ofrece acceso a información más clara, ordenada y
+confiable, además de facilitar la consulta, la reserva y el seguimiento de sus viajes en un solo
+entorno digital. Esto demuestra que el proyecto genera valor en ambos extremos del sistema,
+fortaleciendo su utilidad práctica y su impacto potencial.
+Asimismo, el proyecto se destaca por incorporar funcionalidades que responden a
+necesidades operativas reales del servicio turístico terrestre. Entre ellas se encuentran la
+selección visual de asientos, la generación de tickets digitales con código QR, la validación
+de asistencia mediante escaneo, la integración con mapas, el seguimiento del viaje en tiempo
+real y la posibilidad de gestionar rutas e itinerarios. Estas características no solo enriquecen la
+experiencia del usuario, sino que también aportan control operativo, trazabilidad, mayor
+transparencia y una mejor capacidad de respuesta para los operadores.
+Otra razón importante para aprobar la propuesta es su alcance integral. El proyecto no
+solo contempla la comercialización de planes turísticos, sino también un módulo orientado al
+alquiler de buses para grupos privados, ampliando así su utilidad y su posibilidad de
+aplicación dentro del mercado. Esta integración permite atender diferentes necesidades dentro
+de una sola plataforma, lo que fortalece el carácter innovador y práctico de la propuesta.
+Desde el punto de vista técnico, Ruteo también presenta argumentos sólidos para ser
+aprobado. El documento plantea un desarrollo progresivo, con un alcance inicial realista y
+centrado en las funcionalidades esenciales del producto mínimo viable. Esto demuestra que la
+propuesta no está sobredimensionada ni depende de una infraestructura imposible de
+implementar en el contexto académico, sino que se apoya en tecnologías accesibles,
+conocidas y adecuadas para el tipo de solución planteada. El uso de Flutter, Supabase, Google
+Maps API, herramientas de diseño como Figma y sistemas de validación mediante códigos
+QR confirma que el proyecto puede ejecutarse con recursos tecnológicos disponibles y con
+una estrategia de desarrollo por etapas.
+De igual forma, la propuesta debe aprobarse por su viabilidad formativa y académica.
+El proyecto permite aplicar conocimientos propios de la Ingeniería de Sistemas, tales como
+desarrollo móvil, diseño de interfaces, bases de datos, autenticación, consumo de APIs,
+organización modular y análisis de requerimientos. En consecuencia, no solo se trata de una
+idea útil desde el punto de vista comercial y social, sino también de una propuesta pertinente
+para evidenciar competencias adquiridas durante el proceso de formación.
+También constituye una razón relevante para su aprobación el hecho de que el
+proyecto está orientado a una población objetivo claramente definida. Por un lado, atiende a
+los viajeros interesados en planes terrestres, quienes necesitan consultar información clara y
+reservar de manera organizada. Por otro lado, responde a las necesidades de operadores
+turísticos pequeños y medianos que requieren herramientas para publicar sus servicios,
+gestionar cupos, actualizar precios, organizar rutas y mantener una comunicación más
+eficiente con sus clientes. Esta delimitación fortalece la coherencia del proyecto, ya que
+demuestra que existe claridad sobre los actores involucrados y sobre el valor que la propuesta
+entrega a cada uno de ellos.
+Finalmente, la propuesta de Ruteo merece ser aprobada porque combina pertinencia,
+utilidad, diferenciación, viabilidad técnica y valor académico en una misma solución. No se
+trata únicamente de digitalizar un proceso existente, sino de estructurar una herramienta que
+contribuya a profesionalizar la relación entre operadores turísticos y viajeros, mejorar la
+eficiencia operativa y fortalecer la confianza en la comercialización de servicios turísticos
+terrestres. Por estas razones, Ruteo se consolida como una propuesta coherente, bien
+fundamentada y con suficiente valor práctico, social, comercial y académico para justificar su
+aprobación.
+XV. Cronograma tentativo de desarrollo
+El desarrollo del proyecto Ruteo se plantea de manera gradual, mediante fases
+organizadas que permitan avanzar desde la definición del problema hasta la validación final
+del producto mínimo viable. Este cronograma tentativo busca demostrar que la propuesta
+puede ejecutarse de forma realista dentro del contexto académico de la asignatura,
+distribuyendo el trabajo en etapas claras y controlables.
+En una primera fase de análisis, se realizará la revisión de requerimientos funcionales
+y no funcionales del sistema, así como la delimitación del alcance del MVP. En esta etapa
+también se precisarán los actores principales, los casos de uso, las necesidades de los viajeros
+y operadores turísticos, y las restricciones técnicas del proyecto. La duración estimada para
+esta fase es de una semana.
+En la fase de diseño UI/UX, se desarrollarán los mockups y la propuesta visual de la
+aplicación, definiendo la estructura de navegación, las pantallas principales y la identidad
+gráfica del sistema. Aquí se diseñarán interfaces como inicio de sesión, catálogo de planes,
+detalle del viaje, selección de asientos, reserva, ticket digital y perfil de usuario. Esta fase
+tendrá una duración aproximada de una semana.
+Posteriormente, en la fase de modelado y arquitectura, se organizará la estructura
+lógica del sistema, incluyendo el diseño de base de datos, relaciones entre entidades,
+definición de módulos y preparación de la arquitectura general de la aplicación. También se
+dejarán definidos aspectos como autenticación, reservas, asientos, tickets y validación QR.
+Esta fase se estima en una semana.
+La fase de desarrollo frontend estará orientada a la construcción de la aplicación
+móvil en Flutter, implementando las pantallas, navegación, componentes visuales y
+validaciones básicas del lado del cliente. Dado que esta etapa concentra buena parte del
+trabajo visible del proyecto, se proyecta una duración de dos semanas.
+De forma paralela o posterior, se ejecutará la fase de desarrollo backend, en la cual se
+configurará Supabase para la autenticación, almacenamiento de datos y lógica básica del
+sistema. En esta etapa se implementarán las estructuras necesarias para usuarios, planes
+turísticos, reservas, asientos y tickets digitales. Su duración estimada es de dos semanas.
+Luego se desarrollará la fase de integración, donde se conectará el frontend con los
+servicios backend, se validará el flujo completo de reserva y se incorporarán funcionalidades
+complementarias como generación de QR, consulta de tickets y validación por parte del
+operador. También se revisará la integración básica con mapas o servicios externos, en caso
+de estar dentro del alcance del MVP. Esta fase se estima en una semana.
+En la fase de pruebas, se verificará el funcionamiento de los módulos implementados,
+revisando aspectos como autenticación, consulta de planes, selección de asientos, reserva,
+generación de ticket y validación QR. Se realizarán pruebas funcionales y de navegación para
+detectar errores y ajustar la experiencia de uso. La duración estimada será de una semana.
+Finalmente, se contempla una fase de ajustes finales y preparación de entrega, en la
+que se corregirán fallos detectados, se mejorará la estabilidad del prototipo y se organizará la
+documentación y presentación del proyecto. Esta etapa tendrá una duración aproximada de
+una semana.
+En conjunto, el cronograma tentativo propone un desarrollo de diez semanas, lo cual
+representa un tiempo razonable para construir y presentar una primera versión funcional de
+Ruteo dentro del contexto académico.
+1. Distribución general por fases
+Conclusiones
+El proyecto Ruteo surge como respuesta a una necesidad real del sector turístico
+terrestre, donde aún persisten problemas de baja digitalización, desorganización en reservas,
+manejo manual de cupos, dificultades de comunicación y poca formalidad en los procesos de
+venta y atención al cliente. En este contexto, la propuesta plantea una solución concreta para
+centralizar funciones clave y mejorar tanto la operación de los prestadores del servicio como
+la experiencia de los viajeros.
+Su valor principal radica en que no se limita a mostrar información turística, sino que
+propone una plataforma móvil orientada a procesos reales de gestión y comercialización,
+integrando consulta de planes, reservas, selección de asientos, pagos o pre-reservas y
+validación mediante ticket digital. Esto le da al proyecto un enfoque funcional, útil y
+diferenciador frente a alternativas informales como redes sociales o WhatsApp.
+Además, Ruteo presenta una factibilidad razonable dentro del contexto académico, ya
+que su MVP está delimitado a funcionalidades alcanzables con tecnologías accesibles como
+Flutter, Supabase, Google Maps API y herramientas de diseño como Figma, lo que permite
+plantear un desarrollo progresivo y técnicamente defendible.
+Finalmente, el proyecto tiene una proyección académica y práctica importante, porque
+permite aplicar conocimientos de desarrollo móvil, interfaces, bases de datos, autenticación e
+integración de servicios, al mismo tiempo que propone una solución con potencial de impacto
+real en un sector que requiere modernización y mejores herramientas digitales.

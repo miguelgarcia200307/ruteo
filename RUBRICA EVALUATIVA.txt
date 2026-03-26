@@ -1,0 +1,90 @@
+RUBRICA EVALUATIVA
+
+<Pertinencia y Relevancia>
+Evalúa qué tan adecuada y justificada es la propuesta dentro del contexto académico y real.
+
+- Problema claramente identificado:
+El documento expone con claridad el problema o necesidad que motiva el desarrollo de la aplicación móvil.
+
+- Justificación del proyecto:
+Se argumenta por qué es relevante y útil desarrollar esta app; incluye contexto social, académico o empresarial.
+
+- Población objetivo definida:
+Se identifica el grupo de usuarios al que va dirigida la aplicación de forma específica.
+
+- Viabilidad técnica sustentada:
+El estudiante demuestra que es posible desarrollarla con los recursos, tiempo y tecnologías disponibles.
+</Pertinencia y Relevancia>
+
+<Mockups y Diseño de UI>
+Calidad, completitud y coherencia de los prototipos visuales de la aplicación.
+
+- Pantallas principales presentes:
+Se presentan las pantallas clave: inicio/login, principal (home), al menos 3 funcionalidades y perfil o ajustes.
+
+- Flujo de navegación coherente:
+Las pantallas tienen conexión lógica entre sí; se entiende cómo el usuario navegaría por la app.
+
+- Paleta de colores y tipografía consistente:
+Los mockups usan colores y fuentes uniformes; se percibe una identidad visual definida.
+
+- Componentes de UI reconocibles:
+Se utilizan correctamente botones, cards, inputs, bottom nav bar, headers u otros patrones propios de apps móviles.
+
+- Herramienta profesional utilizada:
+Los mockups se crearon en Figma, Adobe XD, Marvel u otra herramienta de diseño; no son bocetos a mano sin calidad.
+</Mockups y Diseño de UI>
+
+<Contenido de la Propuesta>
+Estructura, completitud y calidad del documento escrito presentado.
+
+- Objetivos general y específicos:
+La propuesta incluye un objetivo general claro y al menos tres específicos, redactados en infinitivo y medibles.
+
+- Descripción funcional de la app:
+Se detalla qué hace la aplicación: módulos, funcionalidades principales y secundarias.
+
+- Tecnologías y herramientas seleccionadas:
+Se indica el framework (Flutter, React Native, Kotlin, etc.), IDE, base de datos y APIs que se planea usar.
+
+- Cronograma o plan de trabajo:
+Se presenta un estimado de tiempos por fases (análisis, diseño, desarrollo, pruebas, despliegue).
+
+- Diagrama de casos de uso o flujo:
+Incluye al menos un diagrama UML, diagrama de flujo o mapa de funcionalidades que represente el sistema.
+</Contenido de la Propuesta>
+
+<Presentación con Diapositivas>
+Diseño, organización y calidad visual del material de apoyo utilizado en la sustentación.
+
+- Diseño visual atractivo y coherente:
+Las diapositivas tienen una línea gráfica definida; usan imágenes, íconos o gráficos pertinentes. No son solo texto.
+
+- Estructura lógica del contenido:
+Hay una portada, agenda/índice, desarrollo por temas, mockups bien integrados y conclusiones o llamado a acción.
+
+- Texto conciso y sin errores ortográficos:
+Las diapositivas no contienen párrafos extensos; el texto es claro, sin tildes faltantes ni errores gramaticales.
+
+- Mockups visibles y bien integrados:
+Las imágenes de pantallas están en alta resolución, enmarcadas en un dispositivo o con buena presentación.
+
+- Número adecuado de diapositivas:
+La presentación tiene entre 10 y 18 diapositivas; no es ni demasiado escasa ni excesivamente extensa.
+</Presentación con Diapositivas>
+
+<Creatividad e Innovación>
+Originalidad de la propuesta y valor diferenciador frente a soluciones existentes.
+
+- Idea original o con diferenciador claro:
+La propuesta no replica una app genérica ya conocida; tiene un enfoque propio o una funcionalidad novedosa.
+
+- Propuesta de valor definida:
+El estudiante explica qué ventaja ofrece su app sobre alternativas actuales o por qué cubre una necesidad no atendida.
+
+- Creatividad en el diseño visual:
+Los mockups muestran cuidado estético; la identidad visual de la app es atractiva y memorable.
+
+- Uso inteligente de tecnología:
+Se propone el uso de tecnologías modernas (notificaciones push, geolocalización, ML, APIs, etc.) cuando aplica.
+</Creatividad e Innovación>

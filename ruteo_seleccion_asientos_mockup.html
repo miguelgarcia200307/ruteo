@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruteo - Seleccion de asientos</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --panel: #ffffff;
+      --line: #cbd5e1;
+      --text: #334155;
+      --muted: #64748b;
+      --brand: #2563eb;
+      --brand-soft: #eff6ff;
+      --occupied: #e2e8f0;
+      --success: #0f9c5a;
+      --warn: #ea580c;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI Variable Text", "Trebuchet MS", sans-serif;
+      background: radial-gradient(500px 260px at 15% 5%, rgba(37, 99, 235, 0.11), transparent 70%), var(--bg);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      padding: 18px 12px;
+    }
+
+    .phone {
+      width: min(340px, 100%);
+      background: #0f172a;
+      border-radius: 44px;
+      padding: 10px;
+      box-shadow: 0 0 0 1px #1e293b;
+    }
+
+    .screen {
+      background: var(--bg);
+      border-radius: 36px;
+      overflow: hidden;
+      height: 720px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .status {
+      background: var(--bg);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 24px 6px;
+      flex-shrink: 0;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .status-icons {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+    }
+
+    .header {
+      padding: 6px 20px 12px;
+      flex-shrink: 0;
+    }
+
+    .header-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+
+    .back {
+      width: 30px;
+      height: 30px;
+      background: var(--brand-soft);
+      border-radius: 9px;
+      display: grid;
+      place-items: center;
+    }
+
+    .title {
+      font-size: 15px;
+      font-weight: 600;
+      margin: 0;
+      color: var(--text);
+    }
+
+    .subtitle {
+      font-size: 11px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .scroll {
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding-bottom: 106px;
+    }
+
+    .legend {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin: 0 20px 14px;
+      flex-wrap: wrap;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 4px;
+    }
+
+    .dot.available {
+      background: var(--brand-soft);
+      border: 1.5px solid var(--brand);
+    }
+
+    .dot.selected {
+      background: var(--brand);
+    }
+
+    .dot.occupied {
+      background: var(--occupied);
+    }
+
+    .bus-wrap {
+      margin: 0 16px;
+    }
+
+    .bus {
+      background: var(--panel);
+      border: 2px solid var(--line);
+      border-radius: 24px 24px 16px 16px;
+      padding: 0 0 14px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bus-front {
+      background: linear-gradient(180deg, #1d4ed8 0%, #2563eb 100%);
+      height: 44px;
+      border-radius: 22px 22px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .windshield {
+      background: rgba(255, 255, 255, 0.18);
+      border-radius: 8px;
+      width: 100px;
+      height: 24px;
+      border: 1.5px solid rgba(255, 255, 255, 0.35);
+    }
+
+    .bus-front small {
+      font-size: 10px;
+      color: #fff;
+      font-weight: 600;
+      position: absolute;
+      bottom: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+
+    .door {
+      display: flex;
+      justify-content: flex-end;
+      padding: 0 10px 6px;
+    }
+
+    .door span {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 9px;
+      color: var(--warn);
+      font-weight: 600;
+    }
+
+    .grid-wrap {
+      padding: 0 10px;
+    }
+
+    .labels,
+    .seat-row {
+      display: grid;
+      grid-template-columns: 20px 1fr 1fr 14px 1fr 1fr;
+      gap: 4px;
+      align-items: center;
+    }
+
+    .labels {
+      margin-bottom: 4px;
+      padding: 0 2px;
+      font-size: 9px;
+      color: #94a3b8;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .seat-row {
+      margin-bottom: 5px;
+    }
+
+    .row-number {
+      font-size: 9px;
+      color: #94a3b8;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .seat {
+      border-radius: 6px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      font-weight: 700;
+      border: 1.5px solid transparent;
+      transition: transform 160ms ease, box-shadow 180ms ease, background 180ms ease;
+      user-select: none;
+    }
+
+    .seat.available {
+      background: var(--brand-soft);
+      border-color: var(--brand);
+      color: var(--brand);
+      cursor: pointer;
+    }
+
+    .seat.available:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 5px 10px rgba(37, 99, 235, 0.18);
+    }
+
+    .seat.occupied {
+      background: var(--occupied);
+      color: #94a3b8;
+      cursor: not-allowed;
+    }
+
+    .seat.selected {
+      background: var(--brand);
+      color: #fff;
+      box-shadow: 0 0 0 2px #bfdbfe;
+      transform: scale(1.03);
+    }
+
+    .rear {
+      margin: 10px 12px 0;
+      background: #f1f5f9;
+      border-radius: 8px;
+      height: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 8px;
+      color: #94a3b8;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .meta {
+      display: grid;
+      gap: 8px;
+      margin-top: 10px;
+      padding: 0 2px;
+    }
+
+    .meta-row {
+      border: 1px solid #d8e5ef;
+      border-radius: 10px;
+      background: #fff;
+      padding: 8px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 7px;
+    }
+
+    .meta-item span {
+      font-size: 10px;
+      color: var(--muted);
+      display: block;
+    }
+
+    .meta-item strong {
+      font-size: 11px;
+      color: var(--text);
+    }
+
+    .hint {
+      min-height: 18px;
+      font-size: 11px;
+      color: #2563eb;
+      text-align: center;
+      font-weight: 600;
+      transition: opacity 180ms ease;
+    }
+
+    .hint.error {
+      color: #b45309;
+    }
+
+    .bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-top: 1px solid #e2e8f0;
+      padding: 10px 20px 14px;
+      border-radius: 0 0 36px 36px;
+      z-index: 4;
+    }
+
+    .bottom-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      gap: 8px;
+    }
+
+    .bottom-info p {
+      margin: 0;
+    }
+
+    .label {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .seat-value {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .seat-value em {
+      color: var(--brand);
+      font-style: normal;
+    }
+
+    .price {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--brand);
+    }
+
+    .reserve-btn {
+      width: 100%;
+      border: 0;
+      border-radius: 12px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      background: linear-gradient(130deg, #2563eb, #1d4ed8);
+      cursor: pointer;
+      transition: transform 160ms ease, box-shadow 180ms ease, opacity 180ms ease;
+      box-shadow: 0 10px 18px rgba(37, 99, 235, 0.28);
+    }
+
+    .reserve-btn:hover:enabled {
+      transform: translateY(-1px);
+    }
+
+    .reserve-btn:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    .reserve-btn.loading {
+      pointer-events: none;
+    }
+
+    .spinner {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.35);
+      border-top-color: #fff;
+      animation: spin 720ms linear infinite;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 54px 8px 92px;
+      border-radius: 24px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 16px;
+      z-index: 6;
+    }
+
+    .overlay.show {
+      display: flex;
+    }
+
+    .overlay.processing {
+      background: rgba(15, 23, 42, 0.72);
+      color: #ecf7ff;
+      border: 1px solid rgba(177, 211, 233, 0.48);
+    }
+
+    .overlay.success {
+      background: rgba(8, 46, 31, 0.88);
+      color: #ebfff4;
+      border: 1px solid rgba(128, 230, 181, 0.58);
+    }
+
+    .overlay-card {
+      max-width: 230px;
+      display: grid;
+      gap: 8px;
+      justify-items: center;
+    }
+
+    .check {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(107, 245, 174, 0.22);
+      border: 1px solid rgba(145, 255, 198, 0.7);
+      display: grid;
+      place-items: center;
+    }
+
+    .check svg {
+      width: 18px;
+      height: 18px;
+      display: block;
+    }
+
+    .disclaimer {
+      font-size: 11px;
+      line-height: 1.4;
+      color: #d4fbe6;
+      border: 1px solid rgba(150, 238, 194, 0.36);
+      background: rgba(9, 68, 43, 0.4);
+      border-radius: 10px;
+      padding: 7px 8px;
+    }
+
+    .overlay h4 {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .overlay p {
+      margin: 0;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .overlay small {
+      font-size: 11px;
+      opacity: 0.88;
+    }
+
+    .success-actions {
+      margin-top: 4px;
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .ghost-btn {
+      border: 1px solid rgba(192, 245, 216, 0.56);
+      background: rgba(255, 255, 255, 0.08);
+      color: #ecfff4;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 6px 10px;
+      cursor: pointer;
+    }
+
+    .pay-btn {
+      border: 1px solid rgba(173, 243, 208, 0.62);
+      background: linear-gradient(120deg, #2dc47f, #1fa064);
+      color: #ffffff;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 6px 12px;
+      cursor: pointer;
+      box-shadow: 0 8px 16px rgba(22, 136, 84, 0.34);
+    }
+
+    .home-indicator {
+      position: absolute;
+      bottom: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: #334155;
+      border-radius: 4px;
+      opacity: 0.2;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @media (max-width: 400px) {
+      .screen {
+        height: 680px;
+      }
+
+      .meta-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="phone">
+    <div class="screen">
+      <div class="status">
+        <span>9:41</span>
+        <div class="status-icons">
+          <svg width="15" height="10" viewBox="0 0 15 10"><rect x="0" y="3" width="3" height="7" rx="1" fill="#334155"/><rect x="4" y="2" width="3" height="8" rx="1" fill="#334155"/><rect x="8" y="0" width="3" height="10" rx="1" fill="#334155"/><rect x="12" y="0" width="3" height="10" rx="1" fill="#E2E8F0"/></svg>
+          <svg width="16" height="10" viewBox="0 0 16 10"><path d="M8 1.5C10.5 1.5 12.7 2.6 14.2 4.3L15.5 3C13.7 1.1 11.2 0 8.5 0 5.8 0 3.3 1.1 1.5 3L2.8 4.3C4.3 2.6 6.3 1.5 8 1.5Z" fill="#334155"/><path d="M8 4C9.8 4 11.4 4.8 12.5 6L13.8 4.7C12.4 3.3 10.5 2.5 8.5 2.5 6.5 2.5 4.6 3.3 3.2 4.7L4.5 6C5.6 4.8 7.2 4 8 4Z" fill="#334155"/><circle cx="8" cy="8" r="1.5" fill="#334155"/></svg>
+          <svg width="24" height="11" viewBox="0 0 24 11"><rect x="0" y="1" width="20" height="9" rx="2" stroke="#334155" stroke-width="1" fill="none"/><rect x="1.5" y="2.5" width="13" height="6" rx="1" fill="#334155"/><rect x="21" y="3.5" width="2" height="4" rx="1" fill="#334155"/></svg>
+        </div>
+      </div>
+
+      <div class="header">
+        <div class="header-row">
+          <div class="back" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 11L5 7l4-4" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <p class="title">Seleccionar asiento</p>
+            <p class="subtitle">Medellin a Santa Marta | Sabado, 12 de abril</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll">
+        <div class="legend" aria-label="Leyenda de estados">
+          <div class="legend-item"><span class="dot available"></span><span>Disponible</span></div>
+          <div class="legend-item"><span class="dot selected"></span><span>Seleccionado</span></div>
+          <div class="legend-item"><span class="dot occupied"></span><span>Ocupado</span></div>
+        </div>
+
+        <div class="bus-wrap">
+          <div class="bus">
+            <div class="bus-front">
+              <div class="windshield"></div>
+              <small>FRENTE DEL BUS</small>
+            </div>
+
+            <div class="door"><span>Puerta</span></div>
+
+            <div class="grid-wrap">
+              <div class="labels">
+                <div></div><div>A</div><div>B</div><div></div><div>C</div><div>D</div>
+              </div>
+              <div id="seatRows"></div>
+            </div>
+
+            <div class="rear">PARTE TRASERA</div>
+          </div>
+
+          <div class="meta">
+            <div class="meta-row">
+              <div class="meta-item"><span>Ruta</span><strong>Medellin -> Santa Marta</strong></div>
+              <div class="meta-item"><span>Hora de salida</span><strong>6:00 AM</strong></div>
+              <div class="meta-item"><span>Asiento seleccionado</span><strong id="selectedMeta">Ninguno</strong></div>
+              <div class="meta-item"><span>Estado</span><strong id="statusMeta">Pendiente de reserva</strong></div>
+            </div>
+            <p class="hint" id="seatHint">Selecciona un asiento para continuar</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlay processing" id="processingLayer" aria-live="polite">
+        <div class="overlay-card">
+          <div class="spinner" aria-hidden="true"></div>
+          <h4>Procesando reserva...</h4>
+          <p>Confirmando asiento y preparando paso de pago.</p>
+          <small id="processingSeat"></small>
+        </div>
+      </div>
+
+      <div class="overlay success" id="successLayer" aria-live="polite">
+        <div class="overlay-card">
+          <div class="check" aria-hidden="true">
+            <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="10" cy="10" r="9" fill="rgba(31, 160, 100, 0.3)" stroke="rgba(184, 255, 216, 0.9)"/>
+              <path d="M5 10.4L8.3 13.5L15 6.9" stroke="#E8FFF3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h4>Has reservado este asiento</h4>
+          <p id="successSeat"></p>
+          <p>Ahora procede a realizar el pago para completar tu reserva.</p>
+          <p class="disclaimer">Reserva temporal activa por 10 minutos. Si no se completa el pago en ese tiempo, el asiento se libera automaticamente.</p>
+          <div class="success-actions">
+            <button class="pay-btn" id="goPayNow" type="button">Ir a pagar ahora</button>
+            <button class="ghost-btn" id="resetAfterSuccess" type="button">Elegir otro asiento</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom">
+        <div class="bottom-info">
+          <div>
+            <p class="label">Asiento seleccionado</p>
+            <p class="seat-value" id="bottomSeatText">Selecciona un asiento</p>
+          </div>
+          <div style="text-align: right;">
+            <p class="label">Total</p>
+            <p class="price">$185.000</p>
+          </div>
+        </div>
+        <button class="reserve-btn" id="reserveBtn" type="button" disabled>Reservar ahora</button>
+      </div>
+
+      <div class="home-indicator" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <script>
+    const occupiedSeats = new Set([3, 4, 7, 8, 11, 12, 13, 14, 19, 21, 22, 27, 28, 33, 34]);
+    const letters = ["A", "B", "C", "D"];
+
+    const seatRows = document.getElementById("seatRows");
+    const reserveBtn = document.getElementById("reserveBtn");
+    const bottomSeatText = document.getElementById("bottomSeatText");
+    const selectedMeta = document.getElementById("selectedMeta");
+    const statusMeta = document.getElementById("statusMeta");
+    const seatHint = document.getElementById("seatHint");
+    const processingLayer = document.getElementById("processingLayer");
+    const successLayer = document.getElementById("successLayer");
+    const processingSeat = document.getElementById("processingSeat");
+    const successSeat = document.getElementById("successSeat");
+    const goPayNow = document.getElementById("goPayNow");
+    const resetAfterSuccess = document.getElementById("resetAfterSuccess");
+
+    let selectedSeatEl = null;
+    let selectedSeatData = null;
+    let reserveTimer = null;
+
+    function buildSeatCode(row, col) {
+      return row + letters[col - 1];
+    }
+
+    function showHint(message, type) {
+      seatHint.textContent = message;
+      seatHint.classList.toggle("error", type === "error");
+    }
+
+    function setSelectedSeat(seatEl) {
+      if (selectedSeatEl) selectedSeatEl.classList.remove("selected");
+      selectedSeatEl = seatEl;
+      selectedSeatEl.classList.add("selected");
+
+      selectedSeatData = {
+        number: Number(seatEl.dataset.number),
+        row: Number(seatEl.dataset.row),
+        column: Number(seatEl.dataset.column),
+        code: seatEl.dataset.code
+      };
+
+      selectedMeta.textContent = selectedSeatData.code + " (Asiento " + selectedSeatData.number + ")";
+      statusMeta.textContent = "Listo para reservar";
+      bottomSeatText.innerHTML = "Asiento <em>" + selectedSeatData.code + "</em>";
+      reserveBtn.disabled = false;
+      showHint("Asiento seleccionado: " + selectedSeatData.code, "ok");
+    }
+
+    function clearSelection() {
+      if (selectedSeatEl) selectedSeatEl.classList.remove("selected");
+      selectedSeatEl = null;
+      selectedSeatData = null;
+      selectedMeta.textContent = "Ninguno";
+      statusMeta.textContent = "Pendiente de reserva";
+      bottomSeatText.textContent = "Selecciona un asiento";
+      reserveBtn.disabled = true;
+      reserveBtn.classList.remove("loading");
+      reserveBtn.textContent = "Reservar ahora";
+      showHint("Selecciona un asiento para continuar", "ok");
+    }
+
+    function buildSeats() {
+      let number = 1;
+      for (let row = 1; row <= 10; row += 1) {
+        const rowEl = document.createElement("div");
+        rowEl.className = "seat-row";
+
+        const rowNumber = document.createElement("div");
+        rowNumber.className = "row-number";
+        rowNumber.textContent = String(row);
+        rowEl.appendChild(rowNumber);
+
+        for (let col = 1; col <= 4; col += 1) {
+          const seat = document.createElement("button");
+          seat.type = "button";
+          seat.className = "seat";
+          seat.dataset.number = String(number);
+          seat.dataset.row = String(row);
+          seat.dataset.column = String(col);
+          seat.dataset.code = buildSeatCode(row, col);
+          seat.textContent = String(number);
+
+          if (occupiedSeats.has(number)) {
+            seat.classList.add("occupied");
+            seat.setAttribute("aria-label", "Asiento " + number + " ocupado");
+          } else {
+            seat.classList.add("available");
+            seat.setAttribute("aria-label", "Asiento " + number + " disponible");
+          }
+
+          seat.addEventListener("click", () => {
+            if (seat.classList.contains("occupied")) {
+              showHint("Este asiento ya no esta disponible", "error");
+              return;
+            }
+            if (processingLayer.classList.contains("show")) return;
+            if (successLayer.classList.contains("show")) return;
+            setSelectedSeat(seat);
+          });
+
+          rowEl.appendChild(seat);
+
+          if (col === 2) {
+            rowEl.appendChild(document.createElement("div"));
+          }
+
+          number += 1;
+        }
+
+        seatRows.appendChild(rowEl);
+      }
+    }
+
+    function showProcessing() {
+      if (!selectedSeatData) return;
+      processingSeat.textContent = "Asiento elegido: " + selectedSeatData.code;
+      processingLayer.classList.add("show");
+      reserveBtn.classList.add("loading");
+      reserveBtn.disabled = true;
+      reserveBtn.innerHTML = "<span class=\"spinner\"></span>Procesando reserva...";
+      statusMeta.textContent = "Procesando reserva";
+    }
+
+    function showSuccess() {
+      processingLayer.classList.remove("show");
+      successLayer.classList.add("show");
+      successSeat.textContent = "Asiento reservado: " + selectedSeatData.code;
+      statusMeta.textContent = "Reserva temporal generada";
+      reserveBtn.classList.remove("loading");
+      reserveBtn.textContent = "Reserva confirmada";
+      showHint("Reserva temporal generada con exito", "ok");
+    }
+
+    function reserveSeat() {
+      if (!selectedSeatData) return;
+      clearTimeout(reserveTimer);
+      showProcessing();
+      reserveTimer = setTimeout(showSuccess, 2300);
+    }
+
+    function restartSimulation() {
+      clearTimeout(reserveTimer);
+      processingLayer.classList.remove("show");
+      successLayer.classList.remove("show");
+      clearSelection();
+    }
+
+    function goToPayment() {
+      if (!selectedSeatData) return;
+      statusMeta.textContent = "Paso de pago en curso";
+      showHint("Continua con el pago: tienes 10 minutos para completar la reserva", "ok");
+    }
+
+    reserveBtn.addEventListener("click", reserveSeat);
+    goPayNow.addEventListener("click", goToPayment);
+    resetAfterSuccess.addEventListener("click", restartSimulation);
+
+    buildSeats();
+    clearSelection();
+  </script>
+</body>
+</html>
